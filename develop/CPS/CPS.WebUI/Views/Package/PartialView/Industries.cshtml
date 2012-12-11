@@ -1,0 +1,24 @@
+﻿@model IEnumerable<CPS.WebUI.Models.IndustriesViewModel>
+
+
+<select class="select-field" style="width: 208px;">
+        @{bool
+        isEmpty = String.IsNullOrEmpty(ViewBag.Industry);
+        if (isEmpty)
+        {
+            <option selected="selected" value=""></option>
+        }
+      }
+    @foreach(var industry in Model)
+    {
+        if (industry.IndustryName.Equals(ViewBag.Industry))
+        {
+            <option selected="selected" value="@(industry.IndustryName)" > @(industry.IndustryName)</option>
+        }
+        else
+        {
+            <option value="@(industry.IndustryName)" > @(industry.IndustryName)</option>
+        }
+    }
+</select>
+

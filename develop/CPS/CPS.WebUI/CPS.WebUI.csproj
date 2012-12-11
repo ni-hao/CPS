@@ -75,7 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\AddOnsGroupConvert.cs" />
-    <Compile Include="Common\Status.cs" />
+    <Compile Include="Common\CommonInfo.cs" />
     <Compile Include="Controllers\PackageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -83,8 +83,10 @@
     <Compile Include="Models\AccountSummaryViewModel.cs" />
     <Compile Include="Models\AddOnViewModel.cs" />
     <Compile Include="Models\AddOnGroupViewModel.cs" />
+    <Compile Include="Models\CountriesViewModel.cs" />
     <Compile Include="Models\CurrentPackage.cs" />
     <Compile Include="Models\DiscountViewModel.cs" />
+    <Compile Include="Models\IndustriesViewModel.cs" />
     <Compile Include="Models\RecurringFeeViewModel.cs" />
     <Compile Include="Models\UpgradeInfoViewModel.cs" />
     <Compile Include="Models\AccountFeeModelView.cs" />
@@ -334,6 +336,9 @@
     <Content Include="Views\Package\PartialView\PackageAddOn.cshtml" />
     <Content Include="Views\Package\PartialView\ContactInfo.cshtml" />
     <Content Include="Views\Package\PartialView\States.cshtml" />
+    <Content Include="Views\Package\PartialView\Countries.cshtml" />
+    <Content Include="Views\Package\PartialView\Industries.cshtml" />
+    <Content Include="Views\Package\PartialView\Employees.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

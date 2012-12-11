@@ -308,5 +308,218 @@ namespace CPS.MockObjects
 </AddOns>
 ";
         }
+
+        public static DataTable ListCountries()
+        {
+            DataTable countries = new DataTable("Countries");
+            DataColumn[] countryColumn = new DataColumn[]
+                                              {
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "CountryId",
+                                                          DataType = typeof (Int32),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "CountryCode",
+                                                          DataType = typeof (String),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "Name",
+                                                          DataType = typeof (String),
+                                                      }
+                                              };
+            countries.Columns.AddRange(countryColumn);
+
+            DataRow newRow;
+            newRow = countries.NewRow();
+            newRow["CountryId"] = 1;
+            newRow["CountryCode"] = "";
+            newRow["Name"] = "China";
+            countries.Rows.Add(newRow);
+
+            newRow = countries.NewRow();
+            newRow["CountryId"] = 2;
+            newRow["CountryCode"] = "";
+            newRow["Name"] = "United States";
+            countries.Rows.Add(newRow);
+
+            newRow = countries.NewRow();
+            newRow["CountryId"] = 3;
+            newRow["CountryCode"] = "";
+            newRow["Name"] = "United Kingdom";
+            countries.Rows.Add(newRow);
+
+            newRow = countries.NewRow();
+            newRow["CountryId"] = 4;
+            newRow["CountryCode"] = "";
+            newRow["Name"] = "Other";
+            countries.Rows.Add(newRow);
+
+            return countries;
+        }
+
+        public static DataTable ListIndustries()
+        {
+            DataTable countries = new DataTable("Industries");
+            DataColumn[] countryColumn = new DataColumn[]
+                                              {
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "industry_id",
+                                                          DataType = typeof (Int32),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "industry_code",
+                                                          DataType = typeof (String),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "industry_name",
+                                                          DataType = typeof (String),
+                                                      }
+                                              };
+            countries.Columns.AddRange(countryColumn);
+
+            DataRow newRow;
+            newRow = countries.NewRow();
+            newRow["industry_id"] = 1;
+            newRow["industry_code"] = "";
+            newRow["industry_name"] = "Other";
+            countries.Rows.Add(newRow);
+
+            newRow = countries.NewRow();
+            newRow["industry_id"] = 2;
+            newRow["industry_code"] = "";
+            newRow["industry_name"] = "Education";
+            countries.Rows.Add(newRow);
+
+            newRow = countries.NewRow();
+            newRow["industry_id"] = 3;
+            newRow["industry_code"] = "";
+            newRow["industry_name"] = "Technology";
+            countries.Rows.Add(newRow);
+
+            newRow = countries.NewRow();
+            newRow["industry_id"] = 4;
+            newRow["industry_code"] = "";
+            newRow["industry_name"] = "Medical";
+            countries.Rows.Add(newRow);
+
+            return countries;
+        }
+
+        public static DataTable CPSGetContactInfo()
+        {
+            DataTable countries = new DataTable("ContactInfo");
+            DataColumn[] countryColumn = new DataColumn[]
+                                              {
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "contact_first_name",
+                                                          DataType = typeof (String),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "contact_last_name",
+                                                          DataType = typeof (String),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "title",
+                                                          DataType = typeof (String),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "company",
+                                                          DataType = typeof (String),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "company_size",
+                                                          DataType = typeof (String),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "industry",
+                                                          DataType = typeof (String),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "phone",
+                                                          DataType = typeof (String),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "secondary_phone",
+                                                          DataType = typeof (String),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "email",
+                                                          DataType = typeof (String),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "url",
+                                                          DataType = typeof (String),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "address1",
+                                                          DataType = typeof (String),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "address2",
+                                                          DataType = typeof (String),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "city",
+                                                          DataType = typeof (String),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "state",
+                                                          DataType = typeof (String),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "country",
+                                                          DataType = typeof (String),
+                                                      },
+                                                  new DataColumn
+                                                      {
+                                                          ColumnName = "postalcode",
+                                                          DataType = typeof (String),
+                                                      },
+                                              };
+            countries.Columns.AddRange(countryColumn);
+
+            DataRow newRow;
+            newRow = countries.NewRow();
+            newRow["contact_first_name"] = "Wang";
+            newRow["contact_last_name"] = "Jian";
+            newRow["title"] = "Developer";
+            newRow["company"] = "Shetech";
+            newRow["company_size"] = "26-50";
+            newRow["industry"] = "Technology";
+            newRow["phone"] = "11111";
+            newRow["secondary_phone"] = "22222";
+            newRow["email"] = "WangJian@shintechchina.com";
+            newRow["url"] = "http://www.shintechchina.com";
+            newRow["address1"] = "Beijing";
+            newRow["address2"] = "Torch Road";
+            newRow["city"] = "Weihai";
+            newRow["state"] = "California";
+            newRow["country"] = "United Kingdom";
+            newRow["postalcode"] = "264209";
+            countries.Rows.Add(newRow);
+
+            return countries;
+        }
     }
 }

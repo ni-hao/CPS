@@ -18,14 +18,14 @@
 </script>
 
 @Html.Partial("PartialView/PackageAddOn")
-@Html.Partial("PartialView/ContactInfo", new ContactInfoViewModel())
+@Html.Partial("PartialView/ContactInfo", Model.ContactInfo)
 
 
 <table class="" style="border-bottom: 0px; width: 754px;" id="export-buttons">				
-					<tr>
-						<td class="right" style="padding-top: 10px;">
-							<a id="back" href="#" class="btn btn-off" style="margin-right: 5px;">Back</a>
-							<a id="next" href="#" class="btn btn-off" >Next</a>
-						</td>
-					</tr>
-				</table>
+	<tr>
+		<td class="right" style="padding-top: 10px;">
+			<a id="back" href="#" class="btn btn-off" style="margin-right: 5px;">Back</a>
+			<a id="next" href="#" class="btn btn-off" >Next</a>
+		</td>
+	</tr>
+</table>

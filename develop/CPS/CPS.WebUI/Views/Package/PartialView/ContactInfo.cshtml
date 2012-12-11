@@ -21,63 +21,51 @@
 											<table class="w100" id="fields"><col><col width="100%"><col><col>
 												<tr>
 													<td class="field-label" style="padding-top: 12px;" >First Name:</td>
-                                                    <td class="field-container" style="padding-top: 12px;" ><input class="text-field" type="text" placeholder="Adam"  id="contactchange" />
+                                                    <td class="field-container" style="padding-top: 12px;" ><input class="text-field" type="text" placeholder="Adam" value="@(Model.FirstName)"  id="contactchange" />
                                                     </td>
 													<td class="field-label" style="padding-top: 12px;" >Email Address:</td>
-													<td class="field-container" style="padding-top: 12px;" ><input class="text-field" type="text" placeholder="adam.groat@caspio.com" /></td>
+													<td class="field-container" style="padding-top: 12px;" ><input class="text-field" type="text" placeholder="adam.groat@caspio.com" value="@(Model.Email)" /></td>
 												</tr>
 												<tr>
 													<td class="field-label" >Last Name:</td>
-													<td class="field-container"><input class="text-field" type="text" placeholder="Groat" /></td>
+													<td class="field-container"><input class="text-field" type="text" placeholder="Groat" value="@(Model.LastName)" /></td>
 													<td class="field-label" >URL:</td>
-													<td class="field-container"><input class="text-field" type="text" placeholder="" /></td>
+													<td class="field-container"><input class="text-field" type="text" placeholder="" value="@(Model.Url)" /></td>
 												</tr>
 												<tr>
 													<td class="field-label" >Title:</td>
-													<td class="field-container"><input class="text-field" type="text" placeholder="Designer" /></td>
+													<td class="field-container"><input class="text-field" type="text" placeholder="Designer" value="@(Model.Title)" /></td>
 													<td class="field-label" >Address Line 1:</td>
-													<td class="field-container" ><input class="text-field" type="text" placeholder="" /></td>
+													<td class="field-container" ><input class="text-field" type="text" placeholder="" value="@(Model.Address1)" /></td>
 												</tr>
 												<tr>
 													<td class="field-label" >Company:</td>
-													<td class="field-container" ><input class="text-field" type="text" placeholder="Caspio" /></td>
+													<td class="field-container" ><input class="text-field" type="text" placeholder="Caspio" value="@(Model.Company)" /></td>
 													<td class="field-label" >Address Line 2:</td>
-													<td class="field-container" ><input class="text-field" type="text" placeholder="" /></td>
+													<td class="field-container" ><input class="text-field" type="text" placeholder="" value="@(Model.Address2)" /></td>
 												</tr>
 												<tr>
 													<td class="field-label" >Employees:</td>
-													<td class="field-container">
-														<select class="select-field" style="width: 208px;">
-														<option selected="selected" value=""></option>
-														<option value="2">1-25</option>
-														<option value="3">25-50</option>
-                                                        <option value="3">50-75</option>
-                                                        </select>
-													</td>
+                                                    <td class="field-container">
+                                                        @Html.Partial("PartialView/Employees", Model.CompanySize ?? "");
+                                                    </td>
 													<td class="field-label" >City:</td>
-													<td class="field-container" ><input class="text-field" type="text" placeholder="" /></td>
+													<td class="field-container" ><input class="text-field" type="text" placeholder="" value="@(Model.City)" /></td>
 												</tr>
 												<tr>
 													<td class="field-label" >Industry</td>
-													<td class="field-container">
-														<select class="select-field" style="width: 208px;">
-														<option selected="selected" value="">Other</option>
-														<option value="2">Education</option>
-														<option value="3">Technology</option>
-														<option value="3">Medical</option>
-                                                        </select>
-													</td>
+                                                    <td class="field-container">
+                                                        @Html.Action("FetchIndustries", new { selectedIndustry = Model.Industry })
+                                                    </td>
 													<td class="field-label" >Country</td>
-													<td class="field-container">
-														<select class="select-field" style="width: 208px;">
-														<option selected="selected" value=""></option>
-														<option value="2">China</option>
-                                                        </select>
-													</td>
+                                                    <td class="field-container">
+                                                        
+                                                        @Html.Action("FetchCountries", new { selectedCountry = Model.Country })
+                                                    </td>
 												</tr>
 												<tr>
 													<td class="field-label" >Office Phone:</td>
-													<td class="field-container"><input class="text-field" type="text" placeholder="697-617-5898" /></td>
+													<td class="field-container"><input class="text-field" type="text" placeholder="697-617-5898" value="@(Model.Phone)" /></td>
 													<td class="field-label" >State/Province:</td>
                                                     <td class="field-container">
                                                         @Html.Partial("PartialView/States", Model.State ?? "")
@@ -85,9 +73,9 @@
 												</tr>
 												<tr>
 													<td class="field-label" >Secondary Phone:</td>
-													<td class="field-container"><input class="text-field" type="text" placeholder="" /></td>
+													<td class="field-container"><input class="text-field" type="text" placeholder="" value="@(Model.SecondaryPhone)" /></td>
 													<td class="field-label" >Zip/Postal Code:</td>
-													<td class="field-container" ><input class="text-field" type="text" placeholder="" /></td>
+													<td class="field-container" ><input class="text-field" type="text" placeholder="" value="@(Model.PostalCode)" /></td>
 												</tr>
 											</table>
 										</td>

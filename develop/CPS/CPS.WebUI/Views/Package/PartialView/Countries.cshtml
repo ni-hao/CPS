@@ -1,0 +1,23 @@
+﻿@model IEnumerable<CPS.WebUI.Models.CountriesViewModel>
+
+
+<select class="select-field" style="width: 208px;">
+        @{bool
+        isEmpty = String.IsNullOrEmpty(ViewBag.Country);
+        if (isEmpty)
+        {
+            <option selected="selected" value=""></option>
+        }
+      }
+    @foreach(var country in Model)
+    {
+        if (country.CountryName.Equals(ViewBag.Country))
+        {
+            <option selected="selected" value="@(country.CountryName)" > @(country.CountryName)</option>
+        }
+        else
+        {
+            <option value="@(country.CountryName)" > @(country.CountryName)</option>
+        }
+    }
+</select>

@@ -50,6 +50,9 @@ namespace CPS.WebUI.Controllers
                                    };
             package.Plans = plans;
 
+            // Query current account's contact information
+            package.ContactInfo = fetchContactInfo(sessionKey);
+
             // Query the current account package.
             String currentAccountPackageStr = BridgePayWS.CPSGetCurrentAccountPackage(_key, sessionKey);
             XElement currentPackageX = XElement.Parse(currentAccountPackageStr).Element("package");
@@ -77,7 +80,7 @@ namespace CPS.WebUI.Controllers
                                                                         AddOnId = Int32.Parse(rx.Attribute("addOnId").Value),
                                                                         Amount = Decimal.Parse(rx.Element("amount").Value),
                                                                         Description = rx.Element("description").Value,
-                                                                        IsAdditionalResource = rx.Attribute("isAdditionalResource").Equals("True") ? true : false,
+                                                                        IsAdditionalResource = rx.Attribute("isAdditionalResource").Equals("True"),
                                                                         Title = rx.Element("title").Value
                                                                     }
                                      };
@@ -97,25 +100,17 @@ namespace CPS.WebUI.Controllers
                                                                   {
                                                                       AddOnId = Int32.Parse(a.Element("AddOnId").Value),
                                                                       Automated =
-                                                                          a.Element("Automated").Value.Equals("True")
-                                                                              ? true
-                                                                              : false,
+                                                                          a.Element("Automated").Value.Equals("True"),
                                                                       CanBeChanged =
-                                                                          a.Element("CanBeChanged").Value.Equals("True")
-                                                                              ? true
-                                                                              : false,
+                                                                          a.Element("CanBeChanged").Value.Equals("True"),
                                                                       Description = a.Element("Description").Value,
                                                                       FeeId = Int32.Parse(a.Element("FeeId").Value),
                                                                       IsChecked =
-                                                                          a.Element("Checked").Value.Equals("True")
-                                                                              ? true
-                                                                              : false,
+                                                                          a.Element("Checked").Value.Equals("True"),
                                                                       MonthlyFee =
                                                                           Decimal.Parse(a.Element("MonthlyFee").Value),
                                                                       Rewritten =
-                                                                          a.Element("Rewritten").Value.Equals("True")
-                                                                              ? true
-                                                                              : false,
+                                                                          a.Element("Rewritten").Value.Equals("True"),
                                                                       SetUpFee =
                                                                           Decimal.Parse(a.Element("SetUpFee").Value),
                                                                       Title = a.Element("Title").Value
@@ -129,25 +124,17 @@ namespace CPS.WebUI.Controllers
                                             {
                                                 AddOnId = Int32.Parse(g.Element("AddOnId").Value),
                                                 Automated =
-                                                    g.Element("Automated").Value.Equals("True")
-                                                        ? true
-                                                        : false,
+                                                    g.Element("Automated").Value.Equals("True"),
                                                 CanBeChanged =
-                                                    g.Element("CanBeChanged").Value.Equals("True")
-                                                        ? true
-                                                        : false,
+                                                    g.Element("CanBeChanged").Value.Equals("True"),
                                                 Description = g.Element("Description").Value,
                                                 FeeId = Int32.Parse(g.Element("FeeId").Value),
                                                 IsChecked =
-                                                    g.Element("Checked").Value.Equals("True")
-                                                        ? true
-                                                        : false,
+                                                    g.Element("Checked").Value.Equals("True"),
                                                 MonthlyFee =
                                                     Decimal.Parse(g.Element("MonthlyFee").Value),
                                                 Rewritten =
-                                                    g.Element("Rewritten").Value.Equals("True")
-                                                        ? true
-                                                        : false,
+                                                    g.Element("Rewritten").Value.Equals("True"),
                                                 SetUpFee =
                                                     Decimal.Parse(g.Element("SetUpFee").Value),
                                                 Title = g.Element("Title").Value
@@ -155,6 +142,40 @@ namespace CPS.WebUI.Controllers
             package.OtherAddOns = outGroupAddOns;
 
             return View(package);
+        }
+
+        [ChildActionOnly]
+        public ActionResult FetchCountries(string selectedCountry)
+        {
+            ViewBag.Country = selectedCountry;
+            DataTable countriesData = BridgePayWS.ListCountries();
+
+            var countries = from p in countriesData.AsEnumerable()
+                            select new CountriesViewModel()
+                            {
+                                CountryId = p.Field<int>("CountryId"),
+                                CountryCode = p.Field<String>("CountryCode"),
+                                CountryName = p.Field<String>("Name"),
+                            };
+
+            return PartialView("PartialView/Countries", countries);
+        }
+
+        [ChildActionOnly]
+        public ActionResult FetchIndustries(string selectedIndustry)
+        {
+            ViewBag.Industry = selectedIndustry;
+            DataTable industriesData = BridgePayWS.ListIndustries();
+
+            var industries = from p in industriesData.AsEnumerable()
+                            select new IndustriesViewModel()
+                            {
+                                IndustryId = p.Field<int>("industry_id"),
+                                IndustryCode = p.Field<String>("industry_code"),
+                                IndustryName = p.Field<String>("industry_name"),
+                            };
+
+            return PartialView("PartialView/Industries", industries);
         }
 
         [HttpPost]
@@ -166,11 +187,39 @@ namespace CPS.WebUI.Controllers
                 log.Debug("debug" + result);
             }
 
-
             return Json(new { info = BridgePayWS.ToString() });
         }
 
 
+        #region private method
 
+        private ContactInfoViewModel fetchContactInfo(String sessionKey)
+        {
+            DataTable contactData = BridgePayWS.CPSGetContactInfo(_key, sessionKey);
+
+            var contactInfo = new ContactInfoViewModel
+                                  {
+                                      Address1 = contactData.Rows[0]["address1"].ToString(),
+                                      Address2 = contactData.Rows[0]["address2"].ToString(),
+                                      City = contactData.Rows[0]["city"].ToString(),
+                                      Company = contactData.Rows[0]["company"].ToString(),
+                                      CompanySize = contactData.Rows[0]["company_size"].ToString(),
+                                      Country = contactData.Rows[0]["country"].ToString(),
+                                      Email = contactData.Rows[0]["email"].ToString(),
+                                      FirstName = contactData.Rows[0]["contact_first_name"].ToString(),
+                                      Industry = contactData.Rows[0]["industry"].ToString(),
+                                      LastName = contactData.Rows[0]["contact_last_name"].ToString(),
+                                      Phone = contactData.Rows[0]["phone"].ToString(),
+                                      PostalCode = contactData.Rows[0]["postalcode"].ToString(),
+                                      SecondaryPhone = contactData.Rows[0]["secondary_phone"].ToString(),
+                                      State = contactData.Rows[0]["state"].ToString(),
+                                      Title = contactData.Rows[0]["title"].ToString(),
+                                      Url = contactData.Rows[0]["url"].ToString()
+                                  };
+            return contactInfo;
+
+        }
+
+        #endregion
     }
 }

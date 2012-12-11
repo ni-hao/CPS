@@ -1,0 +1,24 @@
+﻿@using System.Web.Configuration
+@model String
+
+@{var companySizes = WebConfigurationManager.AppSettings["CompanySize"].Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);}
+<select class="select-field" style="width: 208px;">
+    @{bool
+        isEmpty = String.IsNullOrEmpty(Model) ? true : false;
+      if (isEmpty)
+      {
+            <option selected="selected" value=""></option>
+      }
+      }
+    @foreach (var companySize in companySizes)
+    {
+        if (companySize.Equals(Model))
+        {
+            <option selected="selected" value="@(companySize)" > @(companySize)</option>
+        }
+        else
+        {
+            <option value="@(companySize)" > @(companySize)</option>
+        }
+    }
+</select>
