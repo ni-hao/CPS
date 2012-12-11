@@ -1,14 +1,2 @@
 D:\work\workspace\cps\develop\CPS\CPS.MockObjects\bin\Debug\CPS.MockObjects.dll
-D:\work\workspace\cps\develop\CPS\CPS.MockObjects\bin\Debug\CPS.MockObjects.pdb
-D:\work\workspace\cps\develop\CPS\CPS.MockObjects\bin\Debug\Autofac.Configuration.dll
-D:\work\workspace\cps\develop\CPS\CPS.MockObjects\bin\Debug\Autofac.dll
-D:\work\workspace\cps\develop\CPS\CPS.MockObjects\bin\Debug\Autofac.Integration.Mvc.dll
 D:\work\workspace\cps\develop\CPS\CPS.MockObjects\bin\Debug\Moq.dll
-D:\work\workspace\cps\develop\CPS\CPS.MockObjects\bin\Debug\Autofac.xml
-D:\work\workspace\cps\develop\CPS\CPS.MockObjects\bin\Debug\Moq.pdb
-D:\work\workspace\cps\develop\CPS\CPS.MockObjects\bin\Debug\Moq.xml
-D:\work\workspace\cps\develop\CPS\CPS.MockObjects\obj\Debug\CPS.MockObjects.csprojResolveAssemblyReference.cache
-D:\work\workspace\cps\develop\CPS\CPS.MockObjects\obj\Debug\CPS.MockObjects.dll
-D:\work\workspace\cps\develop\CPS\CPS.MockObjects\obj\Debug\CPS.MockObjects.pdb
-D:\work\workspace\cps\develop\CPS\CPS.MockObjects\bin\Debug\CPS.Abstract.dll
-D:\work\workspace\cps\develop\CPS\CPS.MockObjects\bin\Debug\CPS.Abstract.pdb

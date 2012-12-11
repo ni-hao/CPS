@@ -1,7 +1,0 @@
-D:\work\workspace\cps\develop\CPS\CPS.Common\bin\Debug\CPS.Common.dll
-D:\work\workspace\cps\develop\CPS\CPS.Common\bin\Debug\CPS.Common.pdb
-D:\work\workspace\cps\develop\CPS\CPS.Common\obj\Debug\CPS.Common.dll
-D:\work\workspace\cps\develop\CPS\CPS.Common\obj\Debug\CPS.Common.pdb
-D:\work\workspace\cps\develop\CPS\CPS.Common\obj\Debug\CPS.Common.csprojResolveAssemblyReference.cache
-D:\work\workspace\cps\develop\CPS\CPS.Common\bin\Debug\CPS.Abstract.dll
-D:\work\workspace\cps\develop\CPS\CPS.Common\bin\Debug\CPS.Abstract.pdb

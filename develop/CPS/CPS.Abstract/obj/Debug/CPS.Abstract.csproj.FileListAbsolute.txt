@@ -1,4 +1,0 @@
-D:\work\workspace\cps\develop\CPS\CPS.Abstract\bin\Debug\CPS.Abstract.dll
-D:\work\workspace\cps\develop\CPS\CPS.Abstract\bin\Debug\CPS.Abstract.pdb
-D:\work\workspace\cps\develop\CPS\CPS.Abstract\obj\Debug\CPS.Abstract.dll
-D:\work\workspace\cps\develop\CPS\CPS.Abstract\obj\Debug\CPS.Abstract.pdb
