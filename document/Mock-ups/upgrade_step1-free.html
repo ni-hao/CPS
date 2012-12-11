@@ -1,0 +1,2344 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8">
+<title>Caspio</title>
+
+<!-- style ================================================== -->
+<!-- General -->
+<link rel="stylesheet" type="text/css" media="all" href="style/buttons-tabs.css">
+<link rel="stylesheet" type="text/css" media="all" href="style/main-style.css">
+<link rel="stylesheet" type="text/css" media="all" href="style/overrides.css">
+
+<!-- Page specific -->
+
+<style type="text/css" media="screen"></style>
+
+<style>
+
+
+table.content-table-style {
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+	width: 100%;
+	min-height: 50px;
+	border: 1px solid #d2d2d2;
+	box-shadow: 0px 0px 1px 1px #f2f3f4;
+	border-radius:1px;
+	}
+
+.create-box-t1 {
+	margin: 0px;
+	padding: 14px 15px 15px 15px;
+	background: #fff;
+	width: 100%;
+	}
+
+.create-box-t2 {
+	margin: 0px;
+	padding: 14px 15px 15px 15px;
+	background: #fdfdfd;
+	width: 100%;
+	}
+
+.create-box-t3 {
+	margin: 0px;
+	padding: 14px 15px 15px 15px;
+	background: transparent;
+	width: 100%;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #d7dfe9; /* deeaf2  dbe2ec */
+	}
+
+table.create-box-t3:last-child {
+	border-bottom: 0px solid #deeaf2;
+	}
+
+.minimized {
+	background: #eaeff9;
+	}
+
+
+table.minimized:not(:last-child)    {
+	border-bottom: 1px solid #d0d9e8;
+	}
+
+table.minimized:first-child    {
+	border-top: 1px solid #fff;
+	}
+
+
+
+
+.create-box-content {
+	border-top: 1px solid #ddd; /* deeaf2 e5e5e5 eaeff9 ddd ccc d2d2d2 */
+	background: #f8fafd;
+	/*
+	background-image: url(img/bg-grad-sub-top.png);
+	background-repeat: repeat-x;
+	background-position: left top;
+	*/
+	}
+
+
+
+.first-box {
+	/*
+	background-image: url(img/bg-grad-sub-top.png);
+	background-repeat: repeat-x;
+	background-position: left top;
+	*/
+	border-top: 1px solid #f0f2f5; /* eaeff9 f0f2f5 eef0f3 */
+	}
+
+
+.border-top-white {
+	border-top: 1px solid #fff;
+	}
+
+.border-bot-white {
+	border-top: 1px solid #fff;
+	}
+
+.border-bot-blue {
+	border-bottom: 1px solid #deeaf2;
+	}
+
+.border-bot-grey {
+	border-bottom: 1px solid #ddd;
+	}
+
+
+
+.select-container-blue {
+	margin: 0px;
+	padding: 15px 20px 20px 20px;
+	box-sizing: border-box;
+	background: #f8fafd;
+	width: 100%;
+	}
+
+.create-box-arrow-open {
+	height: 7px;
+	width: 14px;
+	position: absolute;
+	top: -3px;
+	right: 0px;
+	cursor: pointer;
+	background: url(img/step-down-arrow-open.png) no-repeat left top;
+	}
+
+.create-box-arrow-close {
+	height: 7px;
+	width: 14px;
+	position: absolute;
+	top: -4px;
+	right: 0px;
+	cursor: pointer;
+	background: url(img/step-down-arrow-open-flip.png) no-repeat left top;
+	}
+
+.create-box-arrow-open-grey {
+	height: 7px;
+	width: 14px;
+	position: absolute;
+	top: -3px;
+	right: 0px;
+	cursor: pointer;
+	background: url(img/step-down-arrow-open.png) no-repeat left top;
+	}
+
+
+
+/*
+
+.create-box-arrow-open {
+	position: absolute;
+	top: -3px;
+	right: 0px;
+	cursor: pointer;
+	width: 0;
+	height: 0;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-top: 7px solid #738fb1;
+	}
+
+.create-box-arrow-close {
+	position: absolute;
+	top: -3px;
+	right: 0px;
+	cursor: pointer;
+	width: 0;
+	height: 0;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 7px solid #ccc;
+	}
+
+
+
+
+*/
+
+.step-header-open {
+	font-size: 13px;
+	font-weight: normal; /* bold normal */
+	color: #3d82ab;
+	padding: 0px 0px 0px 0px;
+	vertical-align: top;
+	}
+
+.create-box-header {
+	color: #3d82ab;
+	font: normal normal 13px/13px "Helvetica", Arial, sans-serif;
+	}
+
+.optional {
+	color: #777;
+	font: normal normal 12px/12px "Helvetica", Arial, sans-serif;
+	/*
+	display: inline-block;
+	margin: 0px 0px 0px 0px;
+	vertical-align: bottom;
+	*/
+	}
+
+
+
+
+
+
+
+/* checkbox */
+
+label {
+    	display: block;
+    	padding-left: 0px;
+    	text-indent: 0px;
+	}
+
+
+
+
+
+
+.package-header {
+	text-align: center;
+	padding: 0px 0px 0px 0px; 
+	margin: 0px 0px 0px 0px;
+	height: 38px;
+	width: 100%;
+	cursor: pointer;
+	border: 1px solid #e5e5e5;
+	border-width: 0px 0px 1px 0px;
+	border-radius: 0px;
+	background-image: -ms-linear-gradient(top, #fefefe, #f6f6f6);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fefefe), to(#f6f6f6));
+	background-image: -webkit-linear-gradient(top, #fefefe, #f6f6f6);
+	background-image: -o-linear-gradient(top, #fefefe, #f6f6f6);
+	background-image: linear-gradient(top, #fefefe, #f6f6f6);
+	background-image: -moz-linear-gradient(top, #fefefe, #f6f6f6);
+	background-repeat: repeat-x;
+	position: relative;
+	}
+	
+.package-header > span {
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	position: absolute;
+	left: 0px;
+	top: 6px;
+	color: #3186ad;
+	width: 100%;
+	}
+
+
+.package-body {
+	text-align: center;
+	padding: 0px 0px 0px 0px; 
+	margin: 0px 0px 0px 0px;
+	height: 50px;
+	width: 100%;
+	cursor: pointer;
+	border: 0px solid #dcdcdc;
+	border-width: 0px 0px 0px 0px;
+	border-radius: 0px;
+	position: relative;
+	}
+
+
+.package-footer {
+	text-align: center;
+	padding: 0px 0px 0px 0px; 
+	margin: 0px 0px 0px 0px;
+	height: 38px;
+	width: 100%;
+	cursor: pointer;
+	border: 1px solid #eee;
+	border-width: 1px 0px 0px 0px;
+	border-radius: 0px;
+	background-image: -ms-linear-gradient(top, #fefefe, #f6f6f6);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fefefe), to(#f6f6f6));
+	background-image: -webkit-linear-gradient(top, #fefefe, #f6f6f6);
+	background-image: -o-linear-gradient(top, #fefefe, #f6f6f6);
+	background-image: linear-gradient(top, #fefefe, #f6f6f6);
+	background-image: -moz-linear-gradient(top, #fefefe, #f6f6f6);
+	background-repeat: repeat-x;
+	position: absolute;
+	bottom: 0px;
+	}
+
+.feature-label {
+	font-size: 11px;
+	font-weight: normal;
+	position: absolute;
+
+	color: #333;
+	text-align: left;
+	}
+
+.feature-value {
+	font-size: 12px;
+	font-weight: bold;
+	position: absolute;
+
+	color: #3186ad;
+	}
+
+
+
+
+.package-price {
+	font-size: 23px;
+	font-weight: bold;
+	text-align: center;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	color: #3186ad;
+	width: 100%;
+	border-top: 1px solid #eee;
+	padding: 7px 0;
+	display: block;
+	}
+
+
+
+
+
+.p-price {
+	font-size: 19px;
+	font-weight: bold;
+	text-align: center;
+	position: absolute;
+	left: 0px;
+	top: 3px;
+	color: #3186ad;
+	width: 100%;
+	display: block;
+	}
+
+.p-name {
+	font-size: 21px;
+	font-weight: bold;
+	text-align: center;
+	color: #3186ad;
+	width: 100%;
+	}
+
+
+
+
+
+
+
+.package-header2 {
+	text-align: left;
+	padding: 0px 0px 0px 0px; 
+	margin: 0px 0px 0px 0px;
+	height: 27px;
+	width: 100%;
+	cursor: pointer;
+	border: 1px solid #e5e5e5;
+	border-width: 0px 0px 0px 0px;
+	border-style: dashed solid solid solid;	
+	border-color: #ddd #ddd #f1f4f9 #ddd;	
+	background: transparent; /* f8fafd  */
+	position: relative;
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5); 
+	}
+
+.package-body2 {
+	text-align: left;
+	padding: 0px 0px 0px 0px; 
+	margin: 0px 0px 0px 0px;
+	height: 78px;
+	width: 100%;
+	cursor: pointer;
+	border: 0px solid #dcdcdc;
+	border-width: 0px 0px 0px 0px;
+	border-style: solid solid solid solid;
+	border-color: #fff #ddd #ddd #ddd;	/* e5e5e5 e6ecf3 e6ecf3 f1f4f9 */
+	background: transparent; /* f8fafd  */
+	position: relative;
+	box-shadow: inset 1px 0px 0 rgba(255, 255, 255, 0.5); 
+	}
+
+
+.package-footer2 {
+	text-align: center;
+	padding: 0px 0px 0px 0px; 
+	margin: 0px 0px 0px 0px;
+	height: 28px;
+	width: 100%;
+	cursor: pointer;
+	border: 1px solid #eee;
+	border-width: 1px 0px 0px 0px;
+	border-color: #e5e5e5 #ddd #fff #ddd;	
+	background: #fff;
+	position: absolute;
+	bottom: 0px;
+	box-shadow: inset 0px 1px 0 rgba(221, 221, 221, 0.2); 	
+	}
+
+
+.package-price2 {
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	color: #3186ad; /* 3186ad  184478 738fb1 476ea5 6d8199 3b5b87 */
+	width: 100%;
+	padding: 2px 0 5px;
+	display: block;
+	}
+
+
+
+
+
+
+
+.support-bg {
+	background: transparent;		
+	}
+
+
+.package-body2.support-bg {
+	background: transparent; /* eaeff9 fbfbfb eefbdb f2fce4 f2fce3 */
+	}
+
+.package-header2.support-bg {
+	border-bottom: 0px solid #dae2ef;
+	}
+
+.package-body2.support-bg {
+	border-top: 0px solid #f9fafd;
+	}
+
+.package-footer2.support-bg {
+	border-top: 1px solid #dcdcdc;
+	background: #fff;
+	}
+
+
+
+
+
+
+
+.p-deets {
+	font-size: 11px;
+	font-weight: normal;
+	color: #666;
+	text-align: left;
+	padding: 1px 18px 0px 0px;
+	vertical-align: bottom;
+	display: table-cell;
+	}
+
+
+
+
+#current-package .p-label {
+	padding: 6px 0px 6px 0px;
+	}
+
+#current-package .p-value {
+	padding: 0px 0px 2px 0px;
+	}
+
+
+
+
+/********* Right Steps **********/
+
+.datanumber-on {
+ 	color: #476ea5;
+ 	font-size: 13px;
+ 	padding: 0px;
+ 	display: inline-block;
+ 	font-weight: normal;
+ 	background: #fff; /* 6182b2	9bb1ce	e5ebf2 738fb1 */
+	width: 22px;
+	height: 22px;
+	line-height: 23px;
+	border-radius: 11px;
+	position: absolute;
+	top: -4px;
+	left: -1px;
+	text-align: center;
+	letter-spacing: 2px;
+	cursor: default;
+	}
+
+.datanumber-off {
+ 	color: #666;
+ 	font-size: 13px;
+ 	padding: 0px;
+ 	display: inline-block;
+ 	font-weight: normal;
+ 	background: #ececec; /* ececec*/
+	width: 22px;
+	height: 22px;
+	line-height: 23px;
+	border-radius: 11px;
+	position: absolute;
+	top: -4px;
+	left: -1px;
+	text-align: center;	
+	cursor: default;
+	}
+
+
+/*
+.left-step-container:hover {
+	color: #fff;
+	background: #476ea5; 
+	border: 1px solid #3b5b87; 
+	border-width: 0px 1px 1px 1px; 
+	padding: 10px 5px 10px 8px;	
+	}
+
+.left-step-container:hover span.step-name {
+	color: #fff;
+	}
+
+*/
+
+
+.left-step-container-on {
+	color: #3d82ab;
+	font: normal normal 13px/35px "Helvetica", Arial, sans-serif;
+	height: 35px;	
+	background: #476ea5; 
+	border: 1px solid #3b5b87; 
+	border-width: 1px 1px 1px 1px; 
+	padding: 0px 5px 0px 8px;	
+	cursor: default;	
+	}
+
+.left-step-container {
+	color: #3d82ab;
+	font: normal normal 13px/35px "Helvetica", Arial, sans-serif;
+	height: 35px;		
+	background: #fbfbfb; 
+	border: 1px solid #dddddd; 
+	border-width: 1px 1px 1px 1px;
+	padding: 0px 5px 0px 8px;	
+	cursor: default;
+	}
+
+.left-step-container-on .step-name {
+	display: inline-block;
+	font-weight: normal;
+	font: normal normal 13px/13px "Helvetica", Arial, sans-serif;
+	color: #fff;
+	cursor: default;
+	}
+
+.left-step-container .step-name {
+	display: inline-block;
+	font-weight: normal;
+	font: normal normal 13px/13px "Helvetica", Arial, sans-serif;
+	color: #555;
+	}
+
+.left-step-container > div, .left-step-container-on > div {
+	width: 168px; 
+	padding-left: 5px;
+	position: relative;
+	}
+
+
+
+.b-ccc-b {
+	border-bottom: 1px solid #ccc;
+	}
+
+.b-ddd-b {
+	border-bottom: 1px solid #ddd;
+	}
+
+.b-eee-b {
+	border-bottom: 1px solid #eee;
+	}
+
+.b-line-b {
+	border-bottom: 1px dashed rgba(114, 164, 53, 0.1);
+	}
+
+
+#current-package  table.plan  tr:last-child > td {
+	padding-bottom: 4px;
+}
+
+#current-package  table.plan  tr > td:last-child {
+	padding-right: 0px;
+}
+
+.p-label {
+	font-size: 11px;
+	font-weight: normal;
+	color: #333;
+	text-align: left;
+	padding: 6px 8px 0px 8px;
+	vertical-align: top;
+	white-space: nowrap;
+	}
+
+.p-value {
+	font-size: 12px;
+	font-weight: bold;
+	color: #3d82ab;
+	text-align: left;
+	padding: 1px 8px 0px 8px;
+	vertical-align: top;	
+	white-space: nowrap;	
+	}
+
+.p-value-deet {
+	font-size: 11px;
+	font-weight: normal;
+	color: #666;
+	text-align: left;
+	padding: 1px 0px 2px 14px;
+	vertical-align: top;	
+	white-space: nowrap;	
+	}
+
+ .bull-sup {
+ 	color: #96c950;
+ 	font-size: 11px;
+   	vertical-align: baseline;
+   	position: relative;
+   	top: 0.1em; 
+   	letter-spacing: 1px;	
+ 	}
+
+ .bull {
+ 	color: #888;
+ 	font-size: 11px;
+   	vertical-align: baseline;
+   	position: relative;
+   	top: 0.1em; 
+   	letter-spacing: 1px;	
+ 	}
+
+
+
+#show-plat-details > td:first-child,
+#show-sup-details > td:first-child,
+#show-adds-details > td:first-child
+{ cursor: pointer; }
+
+#show-plat-details-cart > td:first-child,
+#show-sup-details-cart > td:first-child,
+#show-adds-details-cart > td:first-child
+{ cursor: default; }
+
+
+.addon-green {
+	color: #579370; /* 548e6c 579370 */
+}
+
+
+.p-deets {
+	font-size: 11px;
+	font-weight: normal;
+	color: #666;
+	text-align: left;
+	padding: 1px 18px 0px 0px;
+	vertical-align: bottom;
+	display: table-cell;
+	}
+
+#current-package .p-label {
+	padding: 3px 0px 3px 0px;
+	}
+
+#current-package .p-value {
+	padding: 3px 0px 3px 0px;
+	}
+
+#cart-contain .p-value {
+	padding: 3px 12px 3px 12px;
+	}
+
+#cart-contain .p-label {
+	padding: 3px 12px 3px 12px;
+	}
+
+b {
+	font-weight: bold;
+}
+
+#cart-contain .p-cart-l {
+padding: 0px 3px 3px 0px;
+}
+
+#cart-contain .p-cart-r {
+padding: 0px 0px 3px 0px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- Modal Step 2 -->
+<div id="plan-details-pop" class="modal modal-small hide fade"><!-- hide fade -->
+	<div class="modal-header">
+		<a href="#" data-dismiss="modal"><img class="" align="right" style="margin-top: 2px;" src="img/close-x-greyish.png" /></a>
+		<h3 class="f13 blue2" >Plan Details</h3>
+	</div>
+    <div class="modal-body" style="padding: 12px 14px 0px 14px; height: 150px; overflow-y: auto;">
+		<table><tr><td><span class="normal f12 l18">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</td></tr></table>
+	</div>
+	<div class="modal-footer"><a href="#" data-dismiss="modal" class="btn btn-dis" style="margin-right: 5px;">Continue Later</a><a href="#" data-dismiss="modal" class="btn btn-dis">Continue</a></div>
+</div>
+
+<div class="wrapper"><!-- Begin Wrapper -->
+  
+    <div class="wrapright-full"><div id="rightbox" class="rightbox-full" ><div class="title-bar"><a class="title" href="table-list.html">Account</a><img class="crumb-arrow" src="img/crumb-arrow.png"/><span class="title">Upgrade Package</span><a class="quickhelp-open" id="open-help"></a></div>
+	<div class="relative"><img src="img/down-arrow-white.png" id="help-arrow"/><div id="quick-help" class="helpfixed"><div class="helpinner"><h1>Help with Tables</h1></div></div></div>
+	
+	<div class="work-tier1">
+	
+		
+		<div style="position: absolute; top: 49px; left: 789px; z-index: 1000;">
+			<table class="content-table-style white-bg" style="width: 215px; border: 0px;">	
+				<tr>
+					<td style="border: 0px solid #cbe4f2;">
+						<table class="create-box-t1" id="cart-contain" style="padding: 0px; border-collapse: collapse;">
+							<tr><td class="left-step-container-on"><div><span class="step-name">Configure Package</span></div></td></tr>
+							<tr><td class="left-step-container"><div><span class="step-name">Contact Information</span></div></td></tr>
+							<tr><td class="left-step-container"><div style="width: 186px;"><span class="step-name">Billing Information &amp; Summary</span></div></td></tr>
+							<tr>
+								<td style="padding: 7px 0px 0px; border: 1px solid #dddddd; border-width: 0px 1px 1px 1px; ">
+									<table class="w100" style="border-top: 0px solid #eee; margin-top: 0px;">
+										<tr><td class="p-value blue2 f12 normal" style="padding-top: 0px; border-bottom: 0px solid #eee;">Your Package</td></tr>
+									</table>
+									<table class="w100">
+										<tr>
+											<td style="padding: 0px 12px 0px 12px;">
+												<table class="w100" id="cart-monthly-on" style="border-top: 0px solid #eee; border-bottom: 0px solid #eee; margin: 4px 0px 0px;">
+													<tr><td class="p-label grey3 f11 bold p-cart-l">Monthly Fees</td></tr>
+												</table>												
+												<table class="w100"><col><col width="100%">
+													<tr><td class="p-label grey3 f12 p-cart-l">Medium <span class="normal">Platform Plan</span></td><td class="p-value right grey3 normal f12 p-cart-r">$300</td></tr>										
+													<tr><td class="p-label grey3 f12 p-cart-l">5 GB Storage</td><td class="p-value right grey3 normal f12 p-cart-r">$50</td></tr>
+													<tr><td class="p-label grey3 f12 p-cart-l">White Label</td><td class="p-value right grey3 normal f12 p-cart-r">$150</td></tr>										
+												</table>
+												<table class="w100" style="border: 1px solid #eee; border-width: 1px 0px 0px 0px; background: #fff; margin-top: 1px;">
+													<tr><td class="p-label grey3 f12 bold" style="padding: 4px 3px 4px 0px">Monthly Total</td><td class="p-value right grey3 bold" style="padding: 4px 0px 4px 3px">$500</td></tr>
+												</table>
+											</td>
+										</tr>									
+									</table>									
+									<table class="w100">
+										<tr>
+											<td style="padding: 10px 12px 10px 12px;">												
+												<table class="w100" id="cart-monthly-on" style="border-top: 0px solid #eee; border-bottom: 0px solid #eee; margin: 4px 0px 0px;">
+													<tr><td class="p-label grey3 f11 bold p-cart-l">One-time Fees</td></tr>
+												</table>												
+												<table class="w100"><col><col width="100%">
+													<tr><td class="p-label grey3 f12 p-cart-l">Backup Recovery</td><td class="p-value right grey3 normal f12 p-cart-r">$50</td></tr>
+													<tr><td class="p-label grey3 f12 p-cart-l">Developer Support - 2hrs</td><td class="p-value right grey3 normal f12 p-cart-r">$300</td></tr>										
+												</table>
+												<table class="w100" style="border: 1px solid #eee; border-width: 1px 0px 0px 0px; background: #fff; margin-top: 1px;">
+													<tr><td class="p-label grey3 f12 bold" style="padding: 4px 3px 4px 0px">One-time total</td><td class="p-value right grey3 bold" style="padding: 4px 0px 4px 3px">$350</td></tr>
+												</table>											
+											</td>
+										</tr>									
+									</table>	
+									<table class="w100" id="cart-monthly-off" style="border-top: 1px solid #ddd; background: #f8fafd;">
+										<tr><td class="p-label orange bold f12" style="padding-top: 8px;">Amount Due Now</td><td class="p-value right orange f12" style="padding-top: 8px; padding-bottom: 8px;">$850</td></tr>
+									</table>						
+								</td>
+							</tr>
+						</table>					
+					</td>
+				</tr>
+			</table>
+		</div>
+
+
+<style>
+
+
+
+/* Background Color */
+#small {
+background: #38789e;  	/* 62a3c0  3787b2  3d82ab  38789e  */
+}
+#medium {
+background: #346e91;  	/* 5a9ebd  318bb9  2e8dbc  346e91  */
+}
+#large {
+background: #306686;  	/* 4592b5  2a8fc0  1e98cd  306686  */
+}
+#xlarge {
+background: #2c5e7b;  	/* 3186ad  2494c6  0fa3de  2c5e7b  */
+}
+#community {
+background: #699830;  	/* 8eb65d  699830  */
+}
+#business {
+background: #618b2d;  	/* 80ad49  618b2d  */
+}
+#vip {
+background: #59812a;  	/* 72a435  59812a  */
+}
+
+/* Price Colors */
+
+#small .package-price2 {
+color: #2c5e7b;
+}
+#medium .package-price2 {
+color: #2c5e7b;
+}
+#large .package-price2 {
+color: #2c5e7b;
+}
+#xlarge .package-price2 {
+color: #2c5e7b;
+}
+#community > .support-bg > .package-price2 {
+color: #59812a;
+}
+#business > .support-bg > .package-price2 {
+color: #59812a;
+}
+#vip > .support-bg > .package-price2 {
+color: #59812a;
+}
+
+
+/* Header & Body */
+
+#small .package-header2 {
+border: 1px solid #5c9ab6;  
+border-width: 1px 1px 0px 1px;
+border-color: #315260;
+}
+#small .package-body2 {
+border: 1px solid #5c9ab6;  
+border-width: 0px 1px 1px 1px;
+border-color: #315260;	
+}
+#small .package-footer2 {
+border: 1px solid #8eb2c6;
+border-width: 1px 1px 1px 1px;
+border-color: #315260 #d1d1d1 #d1d1d1 #d1d1d1;
+}
+
+
+#medium .package-header2 {
+border-top: 1px solid #4d88a2;  
+border-width: 1px 1px 0px 1px;
+border-color: #294856;	
+}
+#medium .package-body2 {
+border-top: 1px solid #4d88a2;  
+border-width: 0px 1px 1px 1px;
+border-color: #294856;		
+}
+#medium .package-footer2 {
+border-top: 1px solid #4d88a2;  
+border-width: 1px 1px 1px 1px;
+border-color: #294856 #d1d1d1 #d1d1d1 #d1d1d1;
+}
+
+#large .package-header2 {
+border-top: 1px solid #397996;  
+border-width: 1px 1px 0px 1px;
+border-color: #1e404f;		
+}
+#large .package-body2 {
+border-top: 1px solid #397996;  
+border-width: 0px 1px 1px 1px;
+border-color: #1e404f;		
+}
+#large .package-footer2 {
+border-top: 1px solid #276e8f;  
+border-width: 1px 1px 1px 1px;
+border-color: #1e404f #d1d1d1 #d1d1d1 #d1d1d1;
+}
+
+#xlarge .package-header2 {
+border-top: 1px solid #276a88;  
+border-width: 1px 1px 0px 1px;
+border-color: #153848;		
+}
+#xlarge .package-body2 {
+border-top: 1px solid #276a88;  
+border-width: 0px 1px 1px 1px;
+border-color: #153848;		
+}
+#xlarge .package-footer2 {
+border-top: 1px solid #1c5975;  
+border-width: 1px 1px 1px 1px;
+border-color: #153848 #d1d1d1 #d1d1d1 #d1d1d1;
+}
+
+
+#community .package-header2 {
+border-top: 1px solid #769a49;  
+border-width: 1px 1px 0px 1px;	
+border-color: #506832;		
+}
+#community .package-body2 {
+border-top: 1px solid #769a49;  
+border-width: 0px 1px 1px 1px;
+border-color: #506832;		
+}
+#community .package-footer2 {
+border-top: 1px solid #95c94c;  
+border-width: 1px 1px 1px 1px;
+border-color: #506832 #d1d1d1 #d1d1d1 #d1d1d1;
+}
+
+#business .package-header2 {
+border-top: 1px solid #6b933b;  
+border-width: 1px 1px 0px 1px;	
+border-color: #496428;		
+}
+#business .package-body2 {
+border-top: 1px solid #6b933b;  
+border-width: 0px 1px 1px 1px;
+border-color: #496428;		
+}
+#business .package-footer2 {
+border-top: 1px solid #7dac3f;  
+border-width: 1px 1px 1px 1px;
+border-color: #496428 #d1d1d1 #d1d1d1 #d1d1d1;
+}
+
+#vip .package-header2 {
+border-top: 1px solid #42611e;  
+border-width: 1px 1px 0px 1px;	
+border-color: #42611e;		
+}
+#vip .package-body2 {
+border-top: 1px solid #42611e;  
+border-width: 0px 1px 1px 1px;
+border-color: #42611e;		
+}
+#vip .package-footer2 {
+border-top: 1px solid #628f2c;  
+border-width: 1px 1px 1px 1px;
+border-color: #42611e #d1d1d1 #d1d1d1 #d1d1d1;
+}
+
+
+.package-header2 {
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.0); 
+/* 	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.0), 0px 0px 1px 1px rgba(0,0,0, 0.2); */	
+	}
+.package-body2 {
+	box-shadow: inset 1px 0px 0 rgba(255, 255, 255, 0.0); 
+	}
+.package-footer2 {
+	box-shadow: inset 0px 1px 0 rgba(221, 221, 221, 0.5); 	
+	}
+
+
+.package-header2 {
+-webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;   
+	box-sizing: border-box;  	
+	}
+
+.package-body2 {
+-webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;   
+	box-sizing: border-box;  	
+	}
+
+.package-footer2 {
+-webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;   
+	box-sizing: border-box;  	
+	}
+
+
+#platform-section .package-selected {
+	-webkit-box-shadow: 0px 0px 0px 3px #3186ad; 
+	-moz-box-shadow: 0px 0px 0px 3px #3186ad; 
+	box-shadow: 0px 0px 0px 3px #3186ad;	
+	border-radius: 1px;
+	}	
+
+#support .package-selected-support {
+	-webkit-box-shadow: 0px 0px 0px 3px #72a435;
+	-moz-box-shadow: 0px 0px 0px 3px #72a435;
+	box-shadow: 0px 0px 0px 3px #72a435;	
+	border-radius: 1px;		
+	}
+
+#support .package-container:hover {
+	-webkit-box-shadow: 0px 0px 0px 3px #72a435;
+	-moz-box-shadow: 0px 0px 0px 3px #72a435;
+	box-shadow: 0px 0px 0px 3px #72a435;	
+	border-radius: 1px;	
+	opacity: 1.0;
+	}	
+
+.package-container:hover {
+	-webkit-box-shadow: 0px 0px 0px 3px #2c5e7b; /* 3186ad 476ea5 ee5921 2c5e7b */
+	-moz-box-shadow: 0px 0px 0px 3px #2c5e7b; 
+	box-shadow: 0px 0px 0px 3px #2c5e7b;	
+	border-radius: 1px;
+	opacity: 1.0;	
+	}	
+
+
+
+#platform-section .package-container:hover .package-header2, #platform-section .package-container:hover .package-body2 {
+	-webkit-box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;
+	-moz-box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;
+	box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;	
+	border-color: #fff; /* 3186ad */
+	}	
+
+#platform-section .package-container:hover .package-footer2 {
+	-webkit-box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;
+	-moz-box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;
+	box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;	
+	border-right-color: #fff;
+	border-bottom-color: #fff;
+	border-left-color: #fff;
+	border-radius: 1px;
+	}	
+
+#support-section .package-container:hover .package-header2, #support-section .package-container:hover .package-body2 {
+	-webkit-box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;
+	-moz-box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;
+	box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;	
+	border-color: #fff; /* 3186ad */
+	}	
+
+#support-section .package-container:hover .package-footer2 {
+	-webkit-box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;
+	-moz-box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;
+	box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;	
+	border-right-color: #fff;
+	border-bottom-color: #fff;
+	border-left-color: #fff;
+	border-radius: 1px;
+	}	
+
+
+#platform-section .package-selected .package-header2, #platform-section .package-selected .package-body2 {
+	-webkit-box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;
+	-moz-box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;
+	box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;	
+	border-color: #fff; /* 3186ad */
+	}
+
+#platform-section .package-selected .package-footer2 {
+	-webkit-box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;
+	-moz-box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;
+	box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;	
+	border-right-color: #fff;
+	border-bottom-color: #fff;
+	border-left-color: #fff;
+	border-radius: 1px;
+	}	
+
+#support-section .package-selected-support .package-header2, #support-section .package-selected-support .package-body2 {
+	-webkit-box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;
+	-moz-box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;
+	box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;	
+	border-color: #fff; /* 3186ad */
+	}
+
+#support-section .package-selected-support .package-footer2 {
+	-webkit-box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;
+	-moz-box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;
+	box-shadow: 0px 0px 0px 0px #fff, inset 0px 0px 0px 0px #fff;	
+	border-right-color: #fff;
+	border-bottom-color: #fff;
+	border-left-color: #fff;
+	border-radius: 1px;
+	}	
+
+
+
+
+#support .p-value {
+	color: #fff;
+	}
+
+#support .package-price2 {
+	color: #72a435;
+	}
+
+#support .package-header2 > span {
+	color: #fff;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);  /* e0f0ca */
+	-webkit-font-smoothing:antialiased;
+	}
+
+.package-header2 > span {
+	font-size: 18px;
+	font-weight: bold;
+	text-align: left;
+	position: absolute;
+	left: 8px;
+	top: 4px;
+	color: #fff; /* 3186ad  184478 738fb1 476ea5 6d8199 */
+	width: 104px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);  /* dce8f1 */
+	text-align: center;
+	}
+
+#platform-section .p-label, #support-section .p-label {
+	font-size: 11px;
+	font-weight: normal;
+	color: #fff;
+	text-align: left;
+	padding: 6px 8px 0px 8px;
+	vertical-align: top;
+	white-space: nowrap;
+	color: rgba(255, 255, 255, 0.7);
+	}
+
+#platform-section .p-value, #support-section .p-value {
+	font-size: 12px;
+	font-weight: bold;
+	color: #fff;
+	text-align: left;
+	padding: 1px 8px 0px 8px;
+	vertical-align: top;	
+	white-space: nowrap;	
+	}
+
+#platform-section .p-value {
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	text-align: left;
+	padding: 2px 8px 0px 8px;
+	vertical-align: top;	
+	white-space: nowrap;	
+	}
+
+.package-container {
+	text-align: center;
+	padding: 0px 0px 0px 0px; 
+	margin: 0px 0px 0px 0px;
+	height: 132px;
+	width: 122px;
+	cursor: pointer;
+	-webkit-box-shadow: 0px 0px 1px 1px #f2f3f4;
+	-moz-box-shadow: 0px 0px 1px 1px #f2f3f4;
+	box-shadow: 0px 0px 1px 1px #f2f3f4;	
+	border: 0px solid #d1d1d1;
+	border-radius: 1px;
+	position: relative;
+	background: #f8fafd;
+	}
+	
+.opacity-04 {
+	opacity: 0.2;
+	}
+
+.opacity-05 {
+	opacity: 0.5;
+	}
+
+.opacity-06 {
+	opacity: 0.6;
+	}
+
+.opacity-07 {
+	opacity: 0.7;
+	}	
+
+.opacity-08 {
+	opacity: 0.8;
+	}	
+
+.package-container-cover {
+	height: 105px;
+	width: 122px;
+	background: transparent;
+	border: 0px solid #d1d1d1;
+	border-radius: 1px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0, 0.75);
+	}
+	
+.left-box-cover {
+	height: 105px;
+	width: 122px;
+	background: transparent;
+	border: 0px solid #d1d1d1;
+	border-radius: 1px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	box-shadow: 0px 0px 1px 1px rgba(0,0,0, 0.15);
+	}
+
+.compare-link {
+	border: 1px solid #fff; 
+	border-width: 1px 1px 0px 1px; 
+	border-color: #3f7698 #29678c #fff #3f7698; 
+	border-radius: 2px; 
+	width: 100px; 
+	z-index: 1999; 
+	position: absolute; 
+	background: #5c96b9;
+	top: 238px; 
+	left: 88px;
+	box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.05);
+	}	
+
+.compare-link2 {
+	border: 1px solid #fff; 
+	border-width: 1px 1px 1px 1px; 
+	border-color: #709445; 
+	border-radius: 0px; 
+	width: 100px; 
+	z-index: 1999; 
+	position: absolute; 
+	background: #80ad4a;
+	top: 276px; 
+	left: 666px;
+/*	box-shadow: inset 1px -1px 0px 0px rgba(0, 0, 0, 0.05);	*/
+	}
+
+.compare-link3 {
+	border: 1px solid #fff; 
+	border-width: 1px 1px 1px 1px; 
+	border-color: #6b903f #578124 #578124 #578124; /* 688e3a 6b903f 709445 */
+	border-radius: 0px; 
+	width: 176px; 
+	z-index: 1999; 
+	position: absolute; 
+	color: #caf58e;
+	background: #8eb65d; /*  72a435  79a93f  76a73b  75a639  8eb65d  */
+	top: 416px; 
+	left: 12px;
+	box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.10);
+	}
+
+.grad-divider2 {
+	height: 1px;
+	width: 754px; 
+	z-index: 1999; 
+	background: #000;
+	background: #fdfdfd; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #fdfdfd 0%, #e5e5e5 50%, #fdfdfd 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#fdfdfd), color-stop(49%,#cccccc), color-stop(100%,#fdfdfd)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  #fdfdfd 0%,#cccccc 50%,#fdfdfd 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  #fdfdfd 0%,#cccccc 50%,#fdfdfd 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  #fdfdfd 0%,#cccccc 50%,#fdfdfd 100%); /* IE10+ */
+	background: linear-gradient(135deg,  #fdfdfd 0%,#cccccc 50%,#fdfdfd 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#fdfdfd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	}
+
+.select-container.grey {
+	background: #fdfdfd;
+	border-bottom: 1px solid #ddd;	
+	}
+
+.select-container.blue {
+	background: #f8fafd;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid rgba(161, 196, 216, 0.4);
+	}
+
+.select-container.blue2 {
+	background: #eaeff9;
+	border-top: 1px solid rgba(230, 230, 230, 0.6);
+	border-bottom: 1px solid rgba(200, 200, 200, 0.65);
+	box-shadow: 0px -1px 0px 0px rgba(200, 200, 200, 0.65), inset 0px -1px 0px 0px rgba(230, 230, 230, 0.6);
+	}
+
+
+#platform-section .label-tweak {
+	padding: 6px 0px 0px 0px;
+	line-height: 12px;
+	}
+
+#platform-section .value-tweak {
+	padding: 0px 0px 0px 0px;
+	}
+
+#show-plan-details {
+	cursor:  pointer;
+}
+
+</style>
+
+<style>
+
+
+
+#plan-arrow-left {
+	background: url(img/steps-arrow-l.png) no-repeat top left;
+	display: block;
+	width: 11px;
+	height: 17px;
+}
+
+#plan-arrow-left:hover {
+	background: url(img/steps-arrow-l-hover.png) no-repeat top left;
+	display: block;
+	width: 11px;
+	height: 17px;
+}
+
+#plan-arrow-right {
+	background: url(img/steps-arrow-r.png) no-repeat top left;
+	display: block;
+	width: 11px;
+	height: 17px;
+}
+
+#plan-arrow-right:hover {
+	background: url(img/steps-arrow-r-hover.png) no-repeat top left;
+	display: block;
+	width: 11px;
+	height: 17px;
+}
+
+
+#slide1_container {
+	width:600px;
+	height:162px;
+	overflow:hidden;
+	position:relative;
+	}
+
+#slide1_images {
+	position:absolute;
+	right:0px;
+	width:1200px;
+	-webkit-transition:all 0.3s ease-in-out;
+	-moz-transition:all 0.3s ease-in-out;
+	-o-transition:all 0.3s ease-in-out;
+	transition:all 0.3s ease-in-out;
+	}
+
+#slide1_images div.holder {
+	padding:0;
+	margin:0;
+	float:right;
+	width:600px;
+	height:162px;
+	background: #fff;
+	position: relative;
+	}
+
+#slide1-2 {
+	background: #ced2db url(img/arrow-details-right.png) no-repeat 2px 77px; /* b5d0e1 */
+	cursor: pointer;
+	height: 162px; 
+	width: 7px; 
+	float: left; 
+	border: 1px solid #bdc1c9; /* 8eb4c9 */
+	border-width: 0px 1px 0px 1px;	
+}
+
+#slide1-1 {
+	background: #ced2db url(img/arrow-details-left.png) no-repeat 1px 77px;
+	cursor: pointer;
+	height: 162px; 
+	width: 7px; 
+	float: right; 
+	border: 1px solid #bdc1c9; /* 8eb4c9 */
+	border-width: 0px 1px 0px 1px;		
+}
+
+
+/* */
+
+#slide1_container2 {
+	width:534px;
+	height:162px;
+	overflow:hidden;
+	position:relative;
+	}
+
+#slide1_images2 {
+	position:absolute;
+	left:0px;
+	width:662px;
+	-webkit-transition:all 0.3s ease-in-out;
+	-moz-transition:all 0.3s ease-in-out;
+	-o-transition:all 0.3s ease-in-out;
+	transition:all 0.3s ease-in-out;
+	}
+
+.plan-arrow-off {
+	opacity: 0.1; 
+	cursor: auto;
+	}
+
+#plan-arrow-left.plan-arrow-off:hover {
+	opacity: 0.3; 
+	cursor: auto;
+	background: url(img/steps-arrow-l.png) no-repeat top left;	 
+	}
+
+#plan-arrow-right.plan-arrow-off:hover {
+	opacity: 0.3; 
+	cursor: auto;
+	background: url(img/steps-arrow-r.png) no-repeat top left;	 
+	}
+
+</style>
+
+		<div class="none"><!-- none -->
+			<div class="grad-divider2" style="margin-top: 13px; background: #fff;"></div>
+			<div class="grad-divider2"></div>
+			<div class="grad-divider2" style="background: #fff;"></div>
+		</div>
+
+		<table class="content-table-style white-bg " style="width: 754px; margin-top: 0px;" id="platform-section">
+			<tr>
+				<td>
+					<!-- Platform Plan -->
+					<table class="create-box-t1" id="select-type" style="padding: 0px;">
+						<tr>
+							<td style="padding: 0px 0px 0px; border-left: 0px solid #ddd;">
+								<table class="" style="width: 100%; margin: 0 auto;"><col><col width="100%">
+									<tr>
+										<td class="plat-head" colspan="1"><div style="width: 141px; position: relative;">Current Plan <a data-toggle="modal" href="#plan-details-pop"><img style="position: absolute; top: 6px; right: 8px;" src="img/icon-info-white-small.png"></a></div></td>
+										<td class="plat-head-r" colspan="1"><div class="relative">Select a New Plan <a data-toggle="modal" href="#plan-details-pop"><img style="position: absolute; top: 6px; right: 8px;" src="img/icon-info-white-small.png"></a></div></td>
+									</tr>
+									<tr><td colspan="2"><div style="height: 1px;"></div></td></tr>
+									<tr>
+										<td colspan="2">
+											<div>
+												<div style="width: 152px; float: left; background: #ddd; border-right: 0px solid #ccc; height: 162px;">
+													<table class="w100">
+														<tr>
+															<td style="padding: 15px 15px 15px 15px; background: #eaeff9; border-right: 0px solid #d5d5d5; margin-top: 1px;"><!-- eaeff9 eaeaea -->
+																<div class="package-container platform-container package-selected" id="small"><div class="package-container-cover"></div>
+																	<div class="package-header2 "><span class="f15 m3-t">Free Trial</span></div>
+																	<div class="package-body2"><!--  style="padding-top: 22px;" -->
+																		<table class="w100">
+																			<tr><td class="p-label center label-tweak">Data Transfer</td></tr>
+																			<tr><td class="p-value center value-tweak">250 MB</td></tr>
+																			<tr><td class="p-label center none">A La Carte for <br>Add-ons</td></tr>
+																		</table>													
+																	</div>
+																	<div class="package-footer2"><span class="package-price2 f13"><span class="normal"></span>Free<span class="normal"></span></span></div>
+																</div>
+															</td>
+														</tr>
+													</table>	
+												</div>
+												<div id="slide1_container">
+													<div id="slide1_images">
+														<!-- Slide 1 -->
+														<div class="holder">
+															<!-- Button
+															<div id="slide1-2"></div> onclick="$('#hide-plan-text').addClass('none');"  -->
+															<!-- Plans -->
+															<div style="float: left; height: 162px; width: 120px; border-left: 1px solid #d5d5d5;">
+																<table class="w100">
+																	<tr>
+																		<td style="padding: 0px 8px 0px 12px;"><div class="relative"><a id="plan-arrow-left" class="plan-arrow-off"></a></div></td>
+																		<td>
+																			<div id="slide1_container2">
+																				<div id="slide1_images2">
+																					<table class="w100" style="padding: 0px 3px;">
+																						<tr>
+																							<td style="padding: 15px 0px 15px 0px;">
+																								<div class="package-container platform-container" id="small"><div class="package-container-cover"></div>
+																									<div class="package-header2"><span class="">Small</span></div>
+																									<div class="package-body2">
+																										<table class="w100">
+																											<tr><td class="p-label center label-tweak">Data Transfer</td></tr>
+																											<tr><td class="p-value center value-tweak">250 MB</td></tr>
+																											<tr><td class="p-label center none">A La Carte for <br>Add-ons</td></tr>
+																										</table>													
+																									</div>
+																									<div class="package-footer2"><span class="package-price2 f13"><span class="normal">$</span>50 <span class="normal">per month</span></span></div>
+																								</div>
+																							</td>
+																							<td style="padding: 15px 0px 15px 13px;">
+																								<div class="package-container platform-container" id="medium"><div class="package-container-cover"></div>
+																									<div class="package-header2"><span class="">Medium</span></div>
+																									<div class="package-body2">
+																										<table class="w100">
+																											<tr><td class="p-label center label-tweak">Data Transfer</td></tr>
+																											<tr><td class="p-value center value-tweak">2,000 MB</td></tr>
+																											<tr><td class="p-label center label-tweak">Add-ons</td></tr>
+																											<tr><td class="p-value center value-tweak">Included</td></tr>														
+																										</table>
+																									</div>
+																									<div class="package-footer2"><span class="package-price2 f13"><span class="normal">$</span>300 <span class="normal">per month</span></span></div>
+																								</div>
+																							</td>
+																							<td style="padding: 15px 0px 15px 13px;">
+																								<div class="package-container platform-container" id="large"><div class="package-container-cover"></div>
+																									<div class="package-header2"><span class="">Large</span></div>
+																									<div class="package-body2">
+																										<table class="w100">
+																											<tr><td class="p-label center label-tweak">Data Transfer</td></tr>
+																											<tr><td class="p-value center value-tweak">5,000 MB</td></tr>
+																											<tr><td class="p-label center label-tweak">Add-ons</td></tr>
+																											<tr><td class="p-value center value-tweak">Included</td></tr>															
+																										</table>
+																									</div>
+																									<div class="package-footer2"><span class="package-price2 f13"><span class="normal">$</span>600 <span class="normal">per month</span></span></div>
+																								</div>
+																							</td>
+																							<td style="padding: 15px 0px 15px 13px;">
+																								<div class="package-container platform-container" id="xlarge"><div class="package-container-cover"></div>
+																									<div class="package-header2"><span class="" style="">Extra Large</span></div>
+																									<div class="package-body2">
+																										<table class="w100">
+																											<tr><td class="p-label center label-tweak">Data Transfer</td></tr>
+																											<tr><td class="p-value center value-tweak">10,000 MB</td></tr>
+																											<tr><td class="p-label center label-tweak">Add-ons</td></tr>
+																											<tr><td class="p-value center value-tweak">Included</td></tr>															
+																										</table>
+																									</div>
+																									<div class="package-footer2"><span class="package-price2 f13"><span class="normal">$</span>1100 <span class="normal">per month</span></span></div>
+																								</div>
+																							</td>	
+																							<td style="padding: 15px 0px 15px 13px;">
+																								<div class="package-container platform-container" id="xlarge"><div class="package-container-cover"></div>
+																									<div class="package-header2"><span class="" style="">SUPER Size</span></div>
+																									<div class="package-body2">
+																										<table class="w100">
+																											<tr><td class="p-label center label-tweak">Data Transfer</td></tr>
+																											<tr><td class="p-value center value-tweak">100,000 MB</td></tr>
+																											<tr><td class="p-label center label-tweak">Add-ons</td></tr>
+																											<tr><td class="p-value center value-tweak">Included</td></tr>															
+																										</table>
+																									</div>
+																									<div class="package-footer2"><span class="package-price2 f13"><span class="normal">$</span>2100 <span class="normal">per month</span></span></div>
+																								</div>
+																							</td>	
+																						</tr>
+																					</table>
+																				</div>
+																			</div>
+																		</td>
+																		<td style="padding: 0px 9px 0px 8px;"><div class="relative"><a id="plan-arrow-right"></a></div></td>
+																	</tr>
+																</table>
+															</div>
+														</div><!-- End Slide 1 -->
+
+														<!-- Slide 2 -->
+														<div class="holder" style="background: #eaeff9;">
+															<!-- Button -->
+															<div id="slide1-1"></div>
+															<!-- Plans -->
+															<div style="float: left; height: 162px; width: 510px;">
+																<table class="w100">
+																	<tr><td class="step-header-open" style="padding: 15px 0px 0px 10px;">Details</td></tr>						
+																	<tr>
+																		<td class="field-container"  style="padding: 8px 0px 0px 10px;">
+																			<table style="">
+																				<tr><td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td></tr>
+																			</table>
+																		</td>	
+																	</tr>
+																</table>
+															</div>
+														</div><!-- End Slide 2 -->
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>				
+				</td>
+			</tr>
+		</table><!-- End Plan -->
+
+		<div class="">
+			<div class="grad-divider2" style="margin-top: 13px; background: #fff;"></div>
+			<div class="grad-divider2"></div>
+			<div class="grad-divider2" style="background: #fff;"></div>
+		</div>
+
+		<table class="content-table-style white-bg none" style="width: 754px; margin-top: 20px;" id="platform-section">
+			<tr>
+				<td>
+					<!-- B1 -->
+					<table class="create-box-t1" id="select-type" style="padding: 0px;">
+						
+						<tr>
+							<td class="plat-head" colspan="1"><div class="relative">Select a Platform Plan<a data-toggle="modal" href="#plan-details-pop"><img style="position: absolute; top: 6px; right: 8px;" src="img/icon-info-white-small.png"></a></div></td>
+						</tr>	
+
+						<tr>
+
+							<td style="padding: 16px 0px 16px; border-left: 0px solid #ddd;">
+								<table class="" style="width: 200px; margin: 0;">
+									<tr>
+										<td style="padding: 0px 0px 0px 18px;">
+											<div class="package-container platform-container" id="small"><div class="package-container-cover"></div>
+												<div class="package-header2"><span class="">Small</span></div>
+												<div class="package-body2">
+													<table class="w100">
+														<tr><td class="p-label center label-tweak">Data Transfer</td></tr>
+														<tr><td class="p-value center value-tweak">250 MB</td></tr>
+														<tr><td class="p-label center none">A La Carte for <br>Add-ons</td></tr>
+													</table>													
+												</div>
+												<div class="package-footer2"><span class="package-price2 f13"><span class="normal">$</span>50 <span class="normal">per month</span></span></div>
+											</div>
+										</td>
+										<td style="padding: 0px 0px 0px 18px;">
+											<div class="package-container platform-container" id="medium"><div class="package-container-cover"></div>
+												<div class="package-header2"><span class="">Medium</span></div>
+												<div class="package-body2">
+													<table class="w100">
+														<tr><td class="p-label center label-tweak">Data Transfer</td></tr>
+														<tr><td class="p-value center value-tweak">2,000 MB</td></tr>
+														<tr><td class="p-label center label-tweak">Add-ons</td></tr>
+														<tr><td class="p-value center value-tweak">Included</td></tr>														
+													</table>
+												</div>
+												<div class="package-footer2"><span class="package-price2 f13"><span class="normal">$</span>300 <span class="normal">per month</span></span></div>
+											</div>
+										</td>
+										<td style="padding: 0px 0px 0px 18px;">
+											<div class="package-container platform-container" id="large"><div class="package-container-cover"></div>
+												<div class="package-header2"><span class="">Large</span></div>
+												<div class="package-body2">
+													<table class="w100">
+														<tr><td class="p-label center label-tweak">Data Transfer</td></tr>
+														<tr><td class="p-value center value-tweak">5,000 MB</td></tr>
+														<tr><td class="p-label center label-tweak">Add-ons</td></tr>
+														<tr><td class="p-value center value-tweak">Included</td></tr>															
+													</table>
+												</div>
+												<div class="package-footer2"><span class="package-price2 f13"><span class="normal">$</span>600 <span class="normal">per month</span></span></div>
+											</div>
+										</td>
+										<td style="padding: 0px 0px 0px 18px;">
+											<div class="package-container platform-container" id="xlarge"><div class="package-container-cover"></div>
+												<div class="package-header2"><span class="" style="">Extra Large</span></div>
+												<div class="package-body2">
+													<table class="w100">
+														<tr><td class="p-label center label-tweak">Data Transfer</td></tr>
+														<tr><td class="p-value center value-tweak">10,000 MB</td></tr>
+														<tr><td class="p-label center label-tweak">Add-ons</td></tr>
+														<tr><td class="p-value center value-tweak">Included</td></tr>															
+													</table>
+												</div>
+												<div class="package-footer2"><span class="package-price2 f13"><span class="normal">$</span>1100 <span class="normal">per month</span></span></div>
+											</div>
+										</td>	
+										<td style="padding: 0px 0px 0px 18px;">
+											<div class="package-container platform-container" id="xlarge"><div class="package-container-cover"></div>
+												<div class="package-header2"><span class="" style="">SUPER Size</span></div>
+												<div class="package-body2">
+													<table class="w100">
+														<tr><td class="p-label center label-tweak">Data Transfer</td></tr>
+														<tr><td class="p-value center value-tweak">100,000 MB</td></tr>
+														<tr><td class="p-label center label-tweak">Add-ons</td></tr>
+														<tr><td class="p-value center value-tweak">Included</td></tr>															
+													</table>
+												</div>
+												<div class="package-footer2"><span class="package-price2 f13"><span class="normal">$</span>2100 <span class="normal">per month</span></span></div>
+											</div>
+										</td>																																								
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>	
+
+
+
+
+<style>
+
+
+
+.group:after {
+	visibility: hidden;
+	display: block;
+	clear: both;
+	height: 0;
+	font-size: 0;
+	content: "";
+}
+
+.container_12,
+.container_16
+{
+	width: 100%;
+	margin-left: 0%;
+	margin-right: 0%;
+	border-bottom: 1px solid #d5d5d5;
+	overflow: hidden;
+}
+
+.click-body div:last-child {
+	border-bottom: 0px solid #d5d5d5;
+	}
+
+
+.grid_1,
+.grid_2,
+.grid_3,
+.grid_4,
+.grid_5,
+.grid_6,
+.grid_7,
+.grid_8,
+.grid_9,
+.grid_10,
+.grid_11,
+.grid_12,
+.grid_13,
+.grid_14,
+.grid_15,
+.grid_16
+{
+	display: inline;
+	float: left;
+	margin-left: 0%;
+	margin-right: 0%;
+}
+
+
+.container_12 .grid_3,
+.container_16 .grid_4
+{
+	width: 25%;
+}
+
+.container_12 .grid_6,
+.container_16 .grid_8
+{
+	width: 50%;
+}
+
+.container_12 .grid_9,
+.container_16 .grid_12
+{
+	width: 75%;
+}
+
+.container_12 .grid_12,
+.container_16 .grid_16
+{
+	width: 100%;
+}
+
+
+.container_16 .grid_1
+{
+	width: 6.25%;
+}
+
+.container_16 .grid_2
+{
+	width: 12.5%;
+}
+
+.container_16 .grid_3
+{
+	width: 18.75%;
+}
+
+.container_16 .grid_5
+{
+	width: 31.25%;
+}
+
+.container_16 .grid_6
+{
+	width: 37.5%;
+}
+
+.container_16 .grid_7
+{
+	width: 43.75%;
+}
+
+.container_16 .grid_9
+{
+	width: 56.25%;
+}
+
+.container_16 .grid_10
+{
+	width: 62.5%;
+}
+
+.container_16 .grid_11
+{
+	width: 68.75%;
+}
+
+.container_16 .grid_13
+{
+	width: 81.25%;
+}
+
+.container_16 .grid_14
+{
+	width: 87.5%;
+}
+
+.container_16 .grid_15
+{
+	width: 93.75%;
+}
+
+html body * span.clear,
+html body * div.clear,
+html body * li.clear,
+html body * dd.clear
+{
+	background: none;
+	border: 0;
+	clear: both;
+	display: block;
+	float: none;
+	font-size: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+
+.click-body {
+	background: #fff;
+	border: 1px solid #ccc;
+	border-width: 0px 1px 1px 1px;
+	display: none;
+	margin: 0px 0px 10px 0px;
+	padding: 8px 8px 8px 8px;	
+	}
+
+
+.colhead-check {
+	width: 10px;
+	}
+
+.content-table-style table.select-container:last-child {
+	border-bottom: 1px solid #ccc;
+	}
+
+.select-container {
+	margin: 0px;
+	border-bottom: 1px solid #ddd;
+	padding: 15px 18px 15px 18px;
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;    
+	box-sizing: border-box;  
+	width: 100%;	
+	}
+
+.select-container.grey {
+	background: #fdfdfd;
+	border-bottom: 1px solid #ddd;	
+	}
+
+.select-container.blue {
+	background: #f8fafd;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid rgba(161, 196, 216, 0.3);
+	}
+	
+
+
+table.content-table-style {
+  	margin: 0px 0px 10px 0px;
+  	padding: 0px;
+  	width: 100%;
+  	min-height: 50px;
+  	border: 1px solid #d2d2d2;
+  	box-shadow: 0px 0px 1px 1px #f2f3f4;
+  	border-radius:1px;
+	-webkit-box-shadow: 0px 0px 1px 1px #f2f3f4;
+	-moz-box-shadow: 0px 0px 1px 1px #f2f3f4;
+	box-shadow: 0px 0px 1px 1px #f2f3f4;  
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;    
+	box-sizing: border-box;      	
+  	}
+
+div.content-box-t1 {
+  	margin: 0px 0px 10px 0px;
+  	padding: 0px;
+  	width: 100%;
+  	min-height: 10px;
+  	border: 1px solid #d2d2d2;
+  	box-shadow: 0px 0px 1px 1px #f2f3f4;
+  	border-radius:1px;
+	-webkit-box-shadow: 0px 0px 1px 1px #f2f3f4;
+	-moz-box-shadow: 0px 0px 1px 1px #f2f3f4;
+	box-shadow: 0px 0px 1px 1px #f2f3f4;  
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;    
+	box-sizing: border-box;   
+	position: relative;   	
+  	}
+
+
+.create-box-arrow-open {
+	height: 7px;
+	width: 14px;
+	position: absolute;
+	top: 20px;  /* 5px */
+	right: 0px;  /* 0px */
+	cursor: pointer;
+	background: url(img/step-down-arrow-open.png) no-repeat left top;
+	}
+
+.create-box-arrow-close {
+	height: 7px;
+	width: 14px;
+	position: absolute;
+	top: 19px;  /* 4px */
+	right: 0px;  /* 0px */
+	cursor: pointer;
+	background: url(img/step-down-arrow-open-flip.png) no-repeat left top;
+	}
+
+.head-toggle {
+	position: relative;
+	padding: 15px 18px 15px 18px;
+	cursor: pointer;
+	}
+
+.plat-head {
+	color: #fff;
+	background: #3d82ab;
+	height: 30px;
+	line-height: 30px;
+	padding: 0px 0px 0px 12px;
+	font-size: 14px;
+  	box-shadow: 0 0 0px 1px #29678c, 0 0 2px 0px rgba(0,0,0, 0.9);	
+  	/* border: 1px solid #29678c;  */
+	}
+
+.plat-head-r {
+	color: #fff;
+	background: #3d82ab;
+	height: 30px;
+	line-height: 30px;
+	padding: 0px 0px 0px 12px;
+	font-size: 14px;
+	box-shadow: 0px -1px 0px 0px #29678c, 1px 0px 0px 0px #29678c, 0px 1px 0px 0px #29678c, -1px 0px 0px 0px #29678c;
+  	/* border: 1px solid #29678c; */	  	
+	}
+
+.addons-head {
+	color: #fff;
+	background: #579370;
+	height: 30px;
+	line-height: 30px;
+	padding: 0px 0px 0px 12px;
+	font-size: 14px;
+  	box-shadow: 0 0 0px 1px #4f7760, 0 0 2px 0px rgba(0,0,0, 0.9);	
+	}
+
+.click-header {
+	position: relative;
+	margin: 15px 0px 0px 0px;
+	padding: 0px 15px 0px 14px;
+	height: 45px;
+	line-height: 43px;
+	cursor: pointer;
+	color: #555;
+	font-weight: bold;
+	font-size: 14px;
+	background: #fdfdfd;  /* fafafa 6d8199 e6eef2 */
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 1px 1px 1px 1px;
+    box-shadow: 0px 0px 1px 1px rgb(242, 243, 244);
+    -moz-box-sizing: border-box;
+	}
+
+.click-header .object-list-open {
+	top: 12px;
+	right: 7px;
+	}
+
+.click-header img {
+	display: inline-block;
+	position: relative;
+	bottom: -7px;
+	left: -5px;
+	}
+
+.grid_12 .box {
+	border-right: 1px solid #d0e3ff;
+	padding: 8px 10px 8px 10px;
+	background: #f8faff;
+	position: relative;
+	}
+
+.grid_4 .box {
+	position: relative;
+	}
+
+.grid_4 .box label {
+	margin-top: 18px;
+	color: #579370;
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: bold;
+	position: relative;
+	}
+
+.grid_4 .box label input[type="checkbox"] {
+	position: absolute;
+	top: 0px;
+	left: 12px;
+	margin: 0px;
+	}
+
+.grid_4 .box label input[type="radio"] {
+	position: absolute;
+	top: 0px;
+	left: 12px;
+	margin: 0px;
+	}
+
+
+.grid_4 .box label span:nth-of-type(1) {
+	padding-left: 30px;
+	}
+
+.box h2 {
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+	color: #579370;
+	margin-bottom: 3px;
+	}
+
+.box p {
+	font-size: 12px;
+	font-weight: normal;
+	text-align: left;
+	color: #555;
+	}
+
+.plus {
+	border: 1px solid #bababa;
+	width: 18px;
+	height: 17px;
+	color: #666;
+	background-color: #eee; /* daecf6 */
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: normal;
+	text-align: center;
+	padding: 0px 0px 0px 0px;
+	vertical-align: top;
+	cursor: pointer;
+	display: block;
+	}
+
+</style>
+
+		<!-- Addons -->
+		<table class="content-table-style white-bg" style="width: 754px; margin-top: 12px; padding: 0px; display: none;" id="addons-section">	
+			<tr><td class="addons-head">Select Add-ons</td></tr>
+			<tr>
+				<td class="" style="padding: 0px 15px 15px;">
+
+					<!-- Technology -->
+					<!-- <div class="click-header"><div class="relative"><img style="left: -7px;" src="img/icon-upgrade-30-technology.png"/><div class="create-box-arrow-open"></div>Technology</div></div> -->					
+					<div class="click-header"><div class="relative"><img src="img/icon-upgrade-24-technology.png"/><div class="create-box-arrow-open"></div>Technology</div></div>
+					<div class="click-body p0" style="display: none;">
+						<div class="container_16">
+							<div id="grid">
+								<div class="grid_12">
+									<div class="box"><h2>White Label</h2><p>The ability to have unbranded apps and remove Caspio's logo.</p></div>
+								</div>
+								<div class="grid_4">
+									<div class="box"><label><input type="checkbox"/><span class="">$20 </span><span class="normal f11">per month</span></label></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Data Transfer -->
+					<div class="click-header"><div class="relative"><img style="" src="img/icon-upgrade-24-datatransfer.png"/><div class="create-box-arrow-open"></div>Data Transfer</div></div>
+					<div class="click-body p0" style="display: none;">
+						<div class="container_16">
+							<div id="grid">
+								<div class="grid_12">
+									<div class="box"><h2>Increased Data Transfer</h2><p>Add to your base Data Transfer total up to 25,000 MB.</p>
+										<table cellspacing="0" cellpadding="0" style="position: absolute; right: 8px; bottom: 15px;"><!-- right: 28px; bottom: 0px; -->
+											<tr>
+												<td class="inputfield" style="padding: 0px 0px 0px 0px; vertical-align: top;"><a class="plus btn-off" id="data-transfer-minus">&minus;</a></td>
+												<td class="inputfield" style="padding: 0px 4px 0px 4px; vertical-align: top;"><form><input id="data-transfer" class="text-field" type="text" placeholder="5,000 MB" style="width: 55px; text-align: right; height: 17px; line-height: 17px; font-size: 12px;"/></form></td>
+												<td class="inputfield" style="padding: 0px 0px 0px 0px; vertical-align: top;"><a class="plus btn-off" id="data-transfer-plus">+</a></td>
+											</tr>
+										</table>
+									</div>
+								</div>
+								<div class="grid_4">
+									<div class="box"><label><input type="checkbox"/><span class="">$100 </span><span class="normal f11">per month</span></label></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Email -->
+					<div class="click-header"><div class="relative"><img style="" src="img/icon-upgrade-24-email.png"/><div class="create-box-arrow-open"></div>Email</div></div>
+					<div class="click-body p0" style="display: none;">
+						<div class="container_16">
+							<div id="grid">
+								<div class="grid_12"><div class="box" style="padding: 10px 10px 8px 10px;"><h2 class="f14">20 GB</h2></div></div>
+								<div class="grid_4"><div class="box"><label style="margin-top: 11px;"><input type="radio" name="storage" value="1"/><span class="">$20 </span><span class="normal f11">per month</span></label></div></div>
+							</div>
+						</div>
+						<div class="container_16">
+							<div id="grid">
+								<div class="grid_12"><div class="box" style="padding: 10px 10px 8px 10px;"><h2 class="f14">40 GB</h2></div></div>
+								<div class="grid_4"><div class="box"><label style="margin-top: 11px;"><input type="radio" name="storage" value="2"/><span class="">$40 </span><span class="normal f11">per month</span></label></div></div>
+							</div>
+						</div>									
+					</div>
+					<!-- Storage -->
+					<div class="click-header"><div class="relative"><img style="" src="img/icon-upgrade-24-storage.png"/><div class="create-box-arrow-open"></div>Storage</div></div>
+					<div class="click-body p0" style="display: none;">
+						<div class="container_16">
+							<div id="grid">
+								<div class="grid_12"><div class="box" style="padding: 10px 10px 8px 10px;"><h2 class="f14">20 GB</h2></div></div>
+								<div class="grid_4"><div class="box"><label style="margin-top: 11px;"><input type="radio" name="storage" value="1"/><span class="">$20 </span><span class="normal f11">per month</span></label></div></div>
+							</div>
+						</div>
+						<div class="container_16">
+							<div id="grid">
+								<div class="grid_12"><div class="box" style="padding: 10px 10px 8px 10px;"><h2 class="f14">40 GB</h2></div></div>
+								<div class="grid_4"><div class="box"><label style="margin-top: 11px;"><input type="radio" name="storage" value="2"/><span class="">$40 </span><span class="normal f11">per month</span></label></div></div>
+							</div>
+						</div>									
+					</div>
+					<!-- Support -->
+					<div class="click-header"><div class="relative"><img style="" src="img/icon-upgrade-24-support.png"/><div class="create-box-arrow-open"></div>Support</div></div>
+					<div class="click-body p0" style="display: none;">
+						<div class="container_16">
+							<div id="grid">
+								<div class="grid_12"><div class="box" style="padding: 10px 10px 8px 10px;"><h2 class="f14">20 GB</h2></div></div>
+								<div class="grid_4"><div class="box"><label style="margin-top: 11px;"><input type="radio" name="storage" value="1"/><span class="">$20 </span><span class="normal f11">per month</span></label></div></div>
+							</div>
+						</div>
+						<div class="container_16">
+							<div id="grid">
+								<div class="grid_12"><div class="box" style="padding: 10px 10px 8px 10px;"><h2 class="f14">40 GB</h2></div></div>
+								<div class="grid_4"><div class="box"><label style="margin-top: 11px;"><input type="radio" name="storage" value="2"/><span class="">$40 </span><span class="normal f11">per month</span></label></div></div>
+							</div>
+						</div>									
+					</div>
+				</td>
+			</tr>
+		</table><!-- End Addons -->
+
+
+
+		<table class="" style="border-bottom: 0px; width: 754px;" id="export-buttons">			
+			<tr>
+				<td class="right" style="padding-top: 10px;">
+					<a href="#" class="btn btn-off" style="margin-right: 5px;">Cancel</a>
+					<a <a href="upgrade-step-2.html" class="btn btn-off btn-dis" id="next-button">Next</a>
+				</td>
+			</tr>
+		</table>
+
+			</div><!-- tier1 End -->
+        </div><!-- rightbox End -->
+    </div><!-- wrapright End -->
+</div><!-- End Wrapper -->
+
+
+<!-- javascript ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<script type="text/javascript" src="javascript/random.js"></script>
+<script type="text/javascript" src="javascript/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="javascript/jquery-ui-1.8.23.custom.min.js"></script>
+<script type="text/javascript" src="javascript/bootstrap-tab.js"></script>
+<script type="text/javascript" src="javascript/bootstrap-dropdown.js"></script>
+<script type="text/javascript" src="javascript/bootstrap-transition.js"></script>
+<script type="text/javascript" src="javascript/bootstrap-modal.js"></script>
+<script type="text/javascript" src="javascript/bootstrap-button.js"></script>
+
+<!-- page specific javascript ============================================= -->
+
+
+<script>
+$(document).ready(function() {
+	$("#slide1-1").click(function() {
+		$("#slide1_images").css("right","0");
+		$("#slide1-2").toggle("blind", {}, 1);
+
+	});
+	$("#slide1-2").click(function() {
+		$("#slide1_images").css("right","-600px");
+		$("#slide1-2").toggle("blind", {}, 1);
+
+	});
+});
+</script>
+
+
+<script>
+$(document).ready(function() {
+	$("#plan-arrow-left").click(function() {
+		$("#slide1_images2").css("left","0");
+		$('#plan-arrow-left').addClass('plan-arrow-off');
+		$('#plan-arrow-right').removeClass('plan-arrow-off');
+	});
+	$("#plan-arrow-right").click(function() {
+		$("#slide1_images2").css("left","-135px");
+		$('#plan-arrow-right').addClass('plan-arrow-off');
+		$('#plan-arrow-left').removeClass('plan-arrow-off');		
+	});
+});
+</script>
+
+
+<script>
+$(document).ready(function() {
+    $(".click-header").click(function () {
+		$(this).find('div.create-box-arrow-open').toggleClass( "create-box-arrow-close", 1 );	
+      	$(this).next("div.click-body").toggle("blind", {}, 120);
+    });
+});
+</script>
+
+
+<script>
+$(document).ready(function() {
+    $("#expand-datapages").click(function () {
+		$(this).find('.object-list-open').toggleClass( "object-list-close", 1 );
+      	$("#datapage-list").toggle("blind", {}, 60);
+    });
+
+    $("#expand-tables").click(function () {
+		$(this).find('.object-list-open').toggleClass( "object-list-close", 1 );
+      	$("#table-list").toggle("blind", {}, 60);
+    });
+
+    $("#expand-styles").click(function () {
+		$(this).find('.object-list-open').toggleClass( "object-list-close", 1 );
+      	$("#style-list").toggle("blind", {}, 60);
+    });    
+
+});
+</script>
+
+
+<script>
+$(document).ready(function() {
+	$( ".head-toggle" ).click(function () {
+		$(this).find('div.create-box-arrow-open').toggleClass( "create-box-arrow-close", 1 );	
+      	$(this).next("div.inner-box-content").toggle("blind", {}, 120);
+
+	});
+});
+</script>
+
+
+<script>
+  $(document).ready(function() {
+  		$( ".platform-container" ).click(function(){
+    		var thiscontainer = $(this).closest('div.package-container');
+			$( ".platform-container" ).removeClass( "package-selected", 1 );
+			$(this).addClass( "package-selected", 1 );
+			$('#support-section').removeClass("opacity-04");
+			$('#addons-section').removeClass("opacity-04");	
+			$('#next-button').removeClass("btn-dis");
+			if ($("#addons-section").is(':hidden')) {
+	      		$("#addons-section").toggle("blind", {}, 200);		      				
+			};
+		})
+	});
+</script>
+				
+<script>
+  $(document).ready(function() {
+		$( ".support-container" ).click(function(){
+			$( ".support-container" ).removeClass( "package-selected-support", 1 );
+			$(this).addClass( "package-selected-support", 1 );
+			$('#cart-free-trial').addClass("hide");	
+			$('#cart-show-sup').removeClass("hide");			
+			$('#cart-monthly-off').addClass("hide");	
+			$('#cart-monthly-on').removeClass("hide");	
+
+		})
+	});
+</script>
+
+<!-- *********** ************ -->
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$( "#show-plan-details" ).click(function () {
+		if ($(".plan-details").is(':visible')) {
+			$(".plan-details").addClass( "hide", 1 );
+		$(this).find('div#plan-arrow').toggleClass( "create-box-arrow-open", 1 );
+		$(this).find('div#plan-arrow').toggleClass( "create-box-arrow-close", 1 );		
+		}
+
+		else {
+		$(".plan-details").removeClass( "hide", 1 );
+		$(this).find('div#plan-arrow').toggleClass( "create-box-arrow-open", 1 );
+		$(this).find('div#plan-arrow').toggleClass( "create-box-arrow-close", 1 );
+
+		}
+		return false;
+	});
+});
+</script>
+
+
+</body>
+</html>

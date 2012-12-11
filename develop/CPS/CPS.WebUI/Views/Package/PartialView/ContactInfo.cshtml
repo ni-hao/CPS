@@ -1,0 +1,102 @@
+﻿@model CPS.WebUI.Models.ContactInfoViewModel
+           
+           
+           <table class="content-table-style white-bg contact-info" style="width: 754px; margin-top: 0px;">	
+			<tr>
+				<td>
+					<!-- B3 -->
+					<table class="create-box-t1" id="current-package" style="padding: 0px;">						
+						<tr style="background: #fcfcfc;">
+							<td class="section-head blue2 f13">Contact Information</td>
+							<td class="section-head" style="color: #184478;"><a href="http://www.caspio.com/company/legal/privacy-statement.aspx" target="_blank" class="inline-text-edits" style="font-size: 11px; padding-left: 35px; padding-right: 0px; float: right;">Privacy Statement</a></td>
+						</tr>						
+						<tr>
+							<td style="padding: 4px 12px 8px; border-left: 0px solid #ddd; display: table-cell;" colspan="2">
+								<table class="w100" id="body1a">
+									<tr class="hide">
+										<td class="step-header-open" style="padding-right: 0px;">Contact Information <a href="http://www.caspio.com/company/legal/privacy-statement.aspx" target="_blank" class="blue1" style="font-size: 11px; padding-left: 35px; float: right;">(Privacy Statement)</a></td>
+									</tr>
+									<tr>
+										<td class="" style="padding: 0px 0px 0px 0px;">
+											<table class="w100" id="fields"><col><col width="100%"><col><col>
+												<tr>
+													<td class="field-label" style="padding-top: 12px;" >First Name:</td>
+                                                    <td class="field-container" style="padding-top: 12px;" ><input class="text-field" type="text" placeholder="Adam"  id="contactchange" />
+                                                    </td>
+													<td class="field-label" style="padding-top: 12px;" >Email Address:</td>
+													<td class="field-container" style="padding-top: 12px;" ><input class="text-field" type="text" placeholder="adam.groat@caspio.com" /></td>
+												</tr>
+												<tr>
+													<td class="field-label" >Last Name:</td>
+													<td class="field-container"><input class="text-field" type="text" placeholder="Groat" /></td>
+													<td class="field-label" >URL:</td>
+													<td class="field-container"><input class="text-field" type="text" placeholder="" /></td>
+												</tr>
+												<tr>
+													<td class="field-label" >Title:</td>
+													<td class="field-container"><input class="text-field" type="text" placeholder="Designer" /></td>
+													<td class="field-label" >Address Line 1:</td>
+													<td class="field-container" ><input class="text-field" type="text" placeholder="" /></td>
+												</tr>
+												<tr>
+													<td class="field-label" >Company:</td>
+													<td class="field-container" ><input class="text-field" type="text" placeholder="Caspio" /></td>
+													<td class="field-label" >Address Line 2:</td>
+													<td class="field-container" ><input class="text-field" type="text" placeholder="" /></td>
+												</tr>
+												<tr>
+													<td class="field-label" >Employees:</td>
+													<td class="field-container">
+														<select class="select-field" style="width: 208px;">
+														<option selected="selected" value=""></option>
+														<option value="2">1-25</option>
+														<option value="3">25-50</option>
+                                                        <option value="3">50-75</option>
+                                                        </select>
+													</td>
+													<td class="field-label" >City:</td>
+													<td class="field-container" ><input class="text-field" type="text" placeholder="" /></td>
+												</tr>
+												<tr>
+													<td class="field-label" >Industry</td>
+													<td class="field-container">
+														<select class="select-field" style="width: 208px;">
+														<option selected="selected" value="">Other</option>
+														<option value="2">Education</option>
+														<option value="3">Technology</option>
+														<option value="3">Medical</option>
+                                                        </select>
+													</td>
+													<td class="field-label" >Country</td>
+													<td class="field-container">
+														<select class="select-field" style="width: 208px;">
+														<option selected="selected" value=""></option>
+														<option value="2">China</option>
+                                                        </select>
+													</td>
+												</tr>
+												<tr>
+													<td class="field-label" >Office Phone:</td>
+													<td class="field-container"><input class="text-field" type="text" placeholder="697-617-5898" /></td>
+													<td class="field-label" >State/Province:</td>
+                                                    <td class="field-container">
+                                                        @Html.Partial("PartialView/States", Model.State ?? "")
+                                                    </td>
+												</tr>
+												<tr>
+													<td class="field-label" >Secondary Phone:</td>
+													<td class="field-container"><input class="text-field" type="text" placeholder="" /></td>
+													<td class="field-label" >Zip/Postal Code:</td>
+													<td class="field-container" ><input class="text-field" type="text" placeholder="" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>					
+				</td>
+			</tr>
+		</table>
+

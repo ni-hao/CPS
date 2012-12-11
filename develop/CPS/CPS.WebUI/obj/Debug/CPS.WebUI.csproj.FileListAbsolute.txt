@@ -1,0 +1,15 @@
+D:\work\workspace\cps\develop\CPS\CPS.WebUI\bin\CPS.WebUI.dll
+D:\work\workspace\cps\develop\CPS\CPS.WebUI\bin\CPS.WebUI.pdb
+D:\work\workspace\cps\develop\CPS\CPS.WebUI\bin\EntityFramework.dll
+D:\work\workspace\cps\develop\CPS\CPS.WebUI\bin\EntityFramework.xml
+D:\work\workspace\cps\develop\CPS\CPS.WebUI\obj\Debug\CPS.WebUI.csprojResolveAssemblyReference.cache
+D:\work\workspace\cps\develop\CPS\CPS.WebUI\obj\Debug\CPS.WebUI.dll
+D:\work\workspace\cps\develop\CPS\CPS.WebUI\obj\Debug\CPS.WebUI.pdb
+D:\work\workspace\cps\develop\CPS\CPS.WebUI\bin\Autofac.Configuration.dll
+D:\work\workspace\cps\develop\CPS\CPS.WebUI\bin\Autofac.dll
+D:\work\workspace\cps\develop\CPS\CPS.WebUI\bin\Autofac.Integration.Mvc.dll
+D:\work\workspace\cps\develop\CPS\CPS.WebUI\bin\log4net.dll
+D:\work\workspace\cps\develop\CPS\CPS.WebUI\bin\Autofac.xml
+D:\work\workspace\cps\develop\CPS\CPS.WebUI\bin\log4net.xml
+D:\work\workspace\cps\develop\CPS\CPS.WebUI\bin\CPS.Abstract.dll
+D:\work\workspace\cps\develop\CPS\CPS.WebUI\bin\CPS.Abstract.pdb

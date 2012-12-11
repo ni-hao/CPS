@@ -1,0 +1,1199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://federation.caspio.com/BridgePayWS" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://federation.caspio.com/BridgePayWS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://federation.caspio.com/BridgePayWS">
+      <s:element name="DoCancelAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="accountId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cancelReason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cancelDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cancelFeedback" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cancelReplacement" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cancelSatisfaction" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cancelConsideration" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoCancelAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoCancelAccountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoUpgradeDowngradeAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="accountId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="newTypeName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="newBillingCycle" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="promoCodeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="additionalResourcesXml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="addOnsXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoUpgradeDowngradeAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoUpgradeDowngradeAccountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoChargePastDueAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="accountId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="oprionsXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoChargePastDueAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoChargePastDueAccountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvoicesList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="accountId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvoicesListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInvoicesListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReceiptsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="accountId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromDateUTC" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="toDateUTC" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReceiptsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReceiptsListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvoicesPrintableFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="accountId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="invoiceId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvoicesPrintableFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInvoicesPrintableFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReceiptsPrintableFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="accountId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="receiptId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReceiptsPrintableFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReceiptsPrintableFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="accountId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountPackageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountPackageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPromotionCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="accountId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="promotionCodeValue" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="newAccountTypeId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPromotionCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPromotionCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalcNewPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="accountId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="requestXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalcNewPackageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalcNewPackageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableAddOns">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="accountId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="newTypeId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableAddOnsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvailableAddOnsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListIndustries">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListIndustriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListIndustriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListCountries">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListCountriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListCountriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSValidateSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSValidateSessionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CPSValidateAccountPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSValidateAccountPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CPSValidateAccountPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSGetAccountPackages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSGetAccountPackagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CPSGetAccountPackagesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSGetCurrentAccountPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSGetCurrentAccountPackageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CPSGetCurrentAccountPackageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSGetAvailableAddOns">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="packageId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSGetAvailableAddOnsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CPSGetAvailableAddOnsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSCheckPromotionCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="promotionCodeValue" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="packageId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSCheckPromotionCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CPSCheckPromotionCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSGetContactInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSGetContactInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CPSGetContactInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSGetBillingInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSGetBillingInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CPSGetBillingInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSSetContactInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="employees" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="industry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="secondaryPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSSetContactInfoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CPSSetBillingInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccExpMonth" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccExpYear" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="emailReceipt" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="receiptEmails" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSSetBillingInfoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CPSCalcNewPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPackageName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="newBillingCycle" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="promoCodeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="addOnsXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSCalcNewPackageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CPSCalcNewPackageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSDoUpgradeDowngradeAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPackageName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="newBillingCycle" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="promoCodeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="addOnsXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CPSDoUpgradeDowngradeAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CPSDoUpgradeDowngradeAccountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DoCancelAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:DoCancelAccount" />
+  </wsdl:message>
+  <wsdl:message name="DoCancelAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:DoCancelAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="DoUpgradeDowngradeAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:DoUpgradeDowngradeAccount" />
+  </wsdl:message>
+  <wsdl:message name="DoUpgradeDowngradeAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:DoUpgradeDowngradeAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="DoChargePastDueAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:DoChargePastDueAccount" />
+  </wsdl:message>
+  <wsdl:message name="DoChargePastDueAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:DoChargePastDueAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInvoicesListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInvoicesList" />
+  </wsdl:message>
+  <wsdl:message name="GetInvoicesListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInvoicesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReceiptsListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReceiptsList" />
+  </wsdl:message>
+  <wsdl:message name="GetReceiptsListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReceiptsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInvoicesPrintableFileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInvoicesPrintableFile" />
+  </wsdl:message>
+  <wsdl:message name="GetInvoicesPrintableFileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInvoicesPrintableFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReceiptsPrintableFileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReceiptsPrintableFile" />
+  </wsdl:message>
+  <wsdl:message name="GetReceiptsPrintableFileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReceiptsPrintableFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountPackage" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPromotionCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPromotionCode" />
+  </wsdl:message>
+  <wsdl:message name="CheckPromotionCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPromotionCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalcNewPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:CalcNewPackage" />
+  </wsdl:message>
+  <wsdl:message name="CalcNewPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:CalcNewPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableAddOnsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailableAddOns" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableAddOnsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailableAddOnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListIndustriesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListIndustries" />
+  </wsdl:message>
+  <wsdl:message name="ListIndustriesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListIndustriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListCountriesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListCountries" />
+  </wsdl:message>
+  <wsdl:message name="ListCountriesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CPSValidateSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:CPSValidateSession" />
+  </wsdl:message>
+  <wsdl:message name="CPSValidateSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:CPSValidateSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CPSValidateAccountPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:CPSValidateAccountPassword" />
+  </wsdl:message>
+  <wsdl:message name="CPSValidateAccountPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:CPSValidateAccountPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="CPSGetAccountPackagesSoapIn">
+    <wsdl:part name="parameters" element="tns:CPSGetAccountPackages" />
+  </wsdl:message>
+  <wsdl:message name="CPSGetAccountPackagesSoapOut">
+    <wsdl:part name="parameters" element="tns:CPSGetAccountPackagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CPSGetCurrentAccountPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:CPSGetCurrentAccountPackage" />
+  </wsdl:message>
+  <wsdl:message name="CPSGetCurrentAccountPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:CPSGetCurrentAccountPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="CPSGetAvailableAddOnsSoapIn">
+    <wsdl:part name="parameters" element="tns:CPSGetAvailableAddOns" />
+  </wsdl:message>
+  <wsdl:message name="CPSGetAvailableAddOnsSoapOut">
+    <wsdl:part name="parameters" element="tns:CPSGetAvailableAddOnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CPSCheckPromotionCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:CPSCheckPromotionCode" />
+  </wsdl:message>
+  <wsdl:message name="CPSCheckPromotionCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:CPSCheckPromotionCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CPSGetContactInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:CPSGetContactInfo" />
+  </wsdl:message>
+  <wsdl:message name="CPSGetContactInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:CPSGetContactInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CPSGetBillingInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:CPSGetBillingInfo" />
+  </wsdl:message>
+  <wsdl:message name="CPSGetBillingInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:CPSGetBillingInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CPSSetContactInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:CPSSetContactInfo" />
+  </wsdl:message>
+  <wsdl:message name="CPSSetContactInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:CPSSetContactInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CPSSetBillingInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:CPSSetBillingInfo" />
+  </wsdl:message>
+  <wsdl:message name="CPSSetBillingInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:CPSSetBillingInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CPSCalcNewPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:CPSCalcNewPackage" />
+  </wsdl:message>
+  <wsdl:message name="CPSCalcNewPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:CPSCalcNewPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="CPSDoUpgradeDowngradeAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:CPSDoUpgradeDowngradeAccount" />
+  </wsdl:message>
+  <wsdl:message name="CPSDoUpgradeDowngradeAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:CPSDoUpgradeDowngradeAccountResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BridgePayWSSoap">
+    <wsdl:operation name="DoCancelAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Performs additional cancel account actions on cancel from Bridge</wsdl:documentation>
+      <wsdl:input message="tns:DoCancelAccountSoapIn" />
+      <wsdl:output message="tns:DoCancelAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DoUpgradeDowngradeAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Performs required billing actions before account Upgrade/Downgrade</wsdl:documentation>
+      <wsdl:input message="tns:DoUpgradeDowngradeAccountSoapIn" />
+      <wsdl:output message="tns:DoUpgradeDowngradeAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DoChargePastDueAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Performs real time CC processing for past due account</wsdl:documentation>
+      <wsdl:input message="tns:DoChargePastDueAccountSoapIn" />
+      <wsdl:output message="tns:DoChargePastDueAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicesList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get account invoices for specified period as XML string</wsdl:documentation>
+      <wsdl:input message="tns:GetInvoicesListSoapIn" />
+      <wsdl:output message="tns:GetInvoicesListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptsList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get account receipts for specified period as XML string</wsdl:documentation>
+      <wsdl:input message="tns:GetReceiptsListSoapIn" />
+      <wsdl:output message="tns:GetReceiptsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicesPrintableFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get account invoice printable file in PDF format</wsdl:documentation>
+      <wsdl:input message="tns:GetInvoicesPrintableFileSoapIn" />
+      <wsdl:output message="tns:GetInvoicesPrintableFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptsPrintableFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets account receipt printable file in PDF format</wsdl:documentation>
+      <wsdl:input message="tns:GetReceiptsPrintableFileSoapIn" />
+      <wsdl:output message="tns:GetReceiptsPrintableFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountPackage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get account package information in XML format</wsdl:documentation>
+      <wsdl:input message="tns:GetAccountPackageSoapIn" />
+      <wsdl:output message="tns:GetAccountPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPromotionCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Checks if Promotion Code is valid and returns Promotion code settings</wsdl:documentation>
+      <wsdl:input message="tns:CheckPromotionCodeSoapIn" />
+      <wsdl:output message="tns:CheckPromotionCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalcNewPackage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Calculates new package price</wsdl:documentation>
+      <wsdl:input message="tns:CalcNewPackageSoapIn" />
+      <wsdl:output message="tns:CalcNewPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableAddOns">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get list of available Add-Ons (Recurring Fees) for particular account</wsdl:documentation>
+      <wsdl:input message="tns:GetAvailableAddOnsSoapIn" />
+      <wsdl:output message="tns:GetAvailableAddOnsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListIndustries">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get list of company indusries</wsdl:documentation>
+      <wsdl:input message="tns:ListIndustriesSoapIn" />
+      <wsdl:output message="tns:ListIndustriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListCountries">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get list of countries</wsdl:documentation>
+      <wsdl:input message="tns:ListCountriesSoapIn" />
+      <wsdl:output message="tns:ListCountriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CPSValidateSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validates account session key</wsdl:documentation>
+      <wsdl:input message="tns:CPSValidateSessionSoapIn" />
+      <wsdl:output message="tns:CPSValidateSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CPSValidateAccountPassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Performs account login</wsdl:documentation>
+      <wsdl:input message="tns:CPSValidateAccountPasswordSoapIn" />
+      <wsdl:output message="tns:CPSValidateAccountPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CPSGetAccountPackages">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get available account packages</wsdl:documentation>
+      <wsdl:input message="tns:CPSGetAccountPackagesSoapIn" />
+      <wsdl:output message="tns:CPSGetAccountPackagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CPSGetCurrentAccountPackage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get description of current account package</wsdl:documentation>
+      <wsdl:input message="tns:CPSGetCurrentAccountPackageSoapIn" />
+      <wsdl:output message="tns:CPSGetCurrentAccountPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CPSGetAvailableAddOns">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get list of available package add-ons</wsdl:documentation>
+      <wsdl:input message="tns:CPSGetAvailableAddOnsSoapIn" />
+      <wsdl:output message="tns:CPSGetAvailableAddOnsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CPSCheckPromotionCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Check promotional code status</wsdl:documentation>
+      <wsdl:input message="tns:CPSCheckPromotionCodeSoapIn" />
+      <wsdl:output message="tns:CPSCheckPromotionCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CPSGetContactInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get account contact information</wsdl:documentation>
+      <wsdl:input message="tns:CPSGetContactInfoSoapIn" />
+      <wsdl:output message="tns:CPSGetContactInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CPSGetBillingInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get account billing information</wsdl:documentation>
+      <wsdl:input message="tns:CPSGetBillingInfoSoapIn" />
+      <wsdl:output message="tns:CPSGetBillingInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CPSSetContactInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates account contact information</wsdl:documentation>
+      <wsdl:input message="tns:CPSSetContactInfoSoapIn" />
+      <wsdl:output message="tns:CPSSetContactInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CPSSetBillingInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates account billing information</wsdl:documentation>
+      <wsdl:input message="tns:CPSSetBillingInfoSoapIn" />
+      <wsdl:output message="tns:CPSSetBillingInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CPSCalcNewPackage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Calculates new account fees</wsdl:documentation>
+      <wsdl:input message="tns:CPSCalcNewPackageSoapIn" />
+      <wsdl:output message="tns:CPSCalcNewPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CPSDoUpgradeDowngradeAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Changes account package</wsdl:documentation>
+      <wsdl:input message="tns:CPSDoUpgradeDowngradeAccountSoapIn" />
+      <wsdl:output message="tns:CPSDoUpgradeDowngradeAccountSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BridgePayWSSoap" type="tns:BridgePayWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoCancelAccount">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/DoCancelAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoUpgradeDowngradeAccount">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/DoUpgradeDowngradeAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoChargePastDueAccount">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/DoChargePastDueAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicesList">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/GetInvoicesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptsList">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/GetReceiptsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicesPrintableFile">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/GetInvoicesPrintableFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptsPrintableFile">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/GetReceiptsPrintableFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountPackage">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/GetAccountPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPromotionCode">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/CheckPromotionCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalcNewPackage">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/CalcNewPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableAddOns">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/GetAvailableAddOns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListIndustries">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/ListIndustries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCountries">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/ListCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSValidateSession">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSValidateSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSValidateAccountPassword">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSValidateAccountPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSGetAccountPackages">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSGetAccountPackages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSGetCurrentAccountPackage">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSGetCurrentAccountPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSGetAvailableAddOns">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSGetAvailableAddOns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSCheckPromotionCode">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSCheckPromotionCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSGetContactInfo">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSGetContactInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSGetBillingInfo">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSGetBillingInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSSetContactInfo">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSSetContactInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSSetBillingInfo">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSSetBillingInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSCalcNewPackage">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSCalcNewPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSDoUpgradeDowngradeAccount">
+      <soap:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSDoUpgradeDowngradeAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BridgePayWSSoap12" type="tns:BridgePayWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoCancelAccount">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/DoCancelAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoUpgradeDowngradeAccount">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/DoUpgradeDowngradeAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoChargePastDueAccount">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/DoChargePastDueAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicesList">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/GetInvoicesList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptsList">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/GetReceiptsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicesPrintableFile">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/GetInvoicesPrintableFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReceiptsPrintableFile">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/GetReceiptsPrintableFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountPackage">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/GetAccountPackage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPromotionCode">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/CheckPromotionCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalcNewPackage">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/CalcNewPackage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableAddOns">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/GetAvailableAddOns" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListIndustries">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/ListIndustries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListCountries">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/ListCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSValidateSession">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSValidateSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSValidateAccountPassword">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSValidateAccountPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSGetAccountPackages">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSGetAccountPackages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSGetCurrentAccountPackage">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSGetCurrentAccountPackage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSGetAvailableAddOns">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSGetAvailableAddOns" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSCheckPromotionCode">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSCheckPromotionCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSGetContactInfo">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSGetContactInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSGetBillingInfo">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSGetBillingInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSSetContactInfo">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSSetContactInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSSetBillingInfo">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSSetBillingInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSCalcNewPackage">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSCalcNewPackage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CPSDoUpgradeDowngradeAccount">
+      <soap12:operation soapAction="http://federation.caspio.com/BridgePayWS/CPSDoUpgradeDowngradeAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BridgePayWS">
+    <wsdl:port name="BridgePayWSSoap" binding="tns:BridgePayWSSoap">
+      <soap:address location="http://federation/bridgepayws/bridgepayws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BridgePayWSSoap12" binding="tns:BridgePayWSSoap12">
+      <soap12:address location="http://federation/bridgepayws/bridgepayws.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,8 @@
+<Modules>
+  <Module PersistentId="5EE028C6-77FC-44C7-87C7-E3F5AC643EE4" ModuleId="CPS.WebUI" />
+  <Module PersistentId="B5292FC4-2B79-47B9-A308-BE079421E5F5" ModuleId="CPS.MockObjects" />
+  <Module PersistentId="84825E70-1BEA-4679-9147-C6D3E1BE6F8D" ModuleId="CPS.Abstract" />
+  <Module PersistentId="350A54DF-AE4D-4D1A-ACBA-270BFB175909" ModuleId="CPS.Common" />
+  <Module PersistentId="D439344B-8B35-48E9-B495-B55189AAC608" ModuleId="CPS.UnitTest" />
+  <Module PersistentId="5AAAEA28-9FA1-4132-97CC-B4F0043DA65D" ModuleId="CPS.UnitTest_1" />
+</Modules>

@@ -1,0 +1,349 @@
+﻿@model CPS.WebUI.Models.PackageViewModel
+
+
+<!-- Platform Plan -->
+<table class="content-table-style white-bg package-addon" style="width: 754px; margin-top: 0px;" id="platform-section">
+			<tr>
+				<td>
+					<table class="create-box-t1" id="select-type" style="padding: 0px;">
+						<tr>
+							<td style="padding: 0px 0px 0px; border-left: 0px solid #ddd;">
+								<table class="" style="width: 100%; margin: 0 auto;"><col><col width="100%">
+									<tr>
+										<td class="plat-head" colspan="1"><div style="width: 141px; position: relative;">Current Plan <a data-toggle="modal" href="#plan-details-pop"><img style="position: absolute; top: 6px; right: 8px;" src="img/icon-info-white-small.png"></a></div></td>
+										<td class="plat-head-r" colspan="1"><div class="relative">Select a New Plan <a data-toggle="modal" href="#plan-details-pop"><img style="position: absolute; top: 6px; right: 8px;" src="img/icon-info-white-small.png"></a></div></td>
+									</tr>
+									<tr><td colspan="2"><div style="height: 1px;"></div></td></tr>
+									<tr>
+										<td colspan="2">
+											<div>
+												<div style="width: 152px; float: left; background: #ddd; border-right: 0px solid #ccc; height: 162px;">
+													<table class="w100">
+														<tr>
+															<td style="padding: 15px 15px 15px 15px; background: #eaeff9; border-right: 0px solid #d5d5d5; margin-top: 1px;"><!-- eaeff9 eaeaea -->
+																<div class="package-container platform-container package-selected" id="small"><div class="package-container-cover"></div>
+																	<div class="package-header2 "><span class="f15 m3-t">@Model.CurrentPackage.PackageName</span></div>
+																	<div class="package-body2"><!--  style="padding-top: 22px;" -->
+																		<table class="w100">
+																			<tr><td class="p-label center label-tweak">Data Transfer</td></tr>
+																			<tr><td class="p-value center value-tweak">@Model.CurrentPackage.Plan.Bandwidth</td></tr>
+																			<tr><td class="p-label center none">A La Carte for <br>Add-ons</td></tr>
+																		</table>													
+																	</div>
+																	<div class="package-footer2"><span class="package-price2 f13"><span class="normal">$</span>@Model.CurrentPackage.BaseFeeAbsoluteFormatted <span class="normal">per month</span></span></div>
+																</div>
+															</td>
+														</tr>
+													</table>	
+												</div>
+												<div id="slide1_container">
+													<div id="slide1_images">
+														<!-- Slide 1 -->
+														<div class="holder">
+															<!-- Button
+															<div id="slide1-2"></div> onclick="$('#hide-plan-text').addClass('none');"  -->
+															<!-- Plans -->
+															<div style="float: left; height: 162px; width: 120px; border-left: 1px solid #d5d5d5;">
+																<table class="w100">
+																	<tr>
+																		<td style="padding: 0px 8px 0px 12px;"><div class="relative"><a id="plan-arrow-left" class="plan-arrow-off"></a></div></td>
+																		<td>
+																			<div id="slide1_container2">
+																				<div id="slide1_images2">
+																					<table class="w100" style="padding: 0px 3px;">
+																						<tr>
+																							<td style="padding: 15px 0px 15px 0px;">
+																								<div class="package-container platform-container" id="small"><div class="package-container-cover"></div>
+																									<div class="package-header2"><span class="">Small</span></div>
+																									<div class="package-body2">
+																										<table class="w100">
+																											<tr><td class="p-label center label-tweak">Data Transfer</td></tr>
+																											<tr><td class="p-value center value-tweak">250 MB</td></tr>
+																											<tr><td class="p-label center none">A La Carte for <br>Add-ons</td></tr>
+																										</table>													
+																									</div>
+																									<div class="package-footer2"><span class="package-price2 f13"><span class="normal">$</span>50 <span class="normal">per month</span></span></div>
+																								</div>
+																							</td>
+																							<td style="padding: 15px 0px 15px 13px;">
+																								<div class="package-container platform-container" id="medium"><div class="package-container-cover"></div>
+																									<div class="package-header2"><span class="">Medium</span></div>
+																									<div class="package-body2">
+																										<table class="w100">
+																											<tr><td class="p-label center label-tweak">Data Transfer</td></tr>
+																											<tr><td class="p-value center value-tweak">2,000 MB</td></tr>
+																											<tr><td class="p-label center label-tweak">Add-ons</td></tr>
+																											<tr><td class="p-value center value-tweak">Included</td></tr>														
+																										</table>
+																									</div>
+																									<div class="package-footer2"><span class="package-price2 f13"><span class="normal">$</span>300 <span class="normal">per month</span></span></div>
+																								</div>
+																							</td>
+																							<td style="padding: 15px 0px 15px 13px;">
+																								<div class="package-container platform-container" id="large"><div class="package-container-cover"></div>
+																									<div class="package-header2"><span class="">Large</span></div>
+																									<div class="package-body2">
+																										<table class="w100">
+																											<tr><td class="p-label center label-tweak">Data Transfer</td></tr>
+																											<tr><td class="p-value center value-tweak">5,000 MB</td></tr>
+																											<tr><td class="p-label center label-tweak">Add-ons</td></tr>
+																											<tr><td class="p-value center value-tweak">Included</td></tr>															
+																										</table>
+																									</div>
+																									<div class="package-footer2"><span class="package-price2 f13"><span class="normal">$</span>600 <span class="normal">per month</span></span></div>
+																								</div>
+																							</td>
+																							<td style="padding: 15px 0px 15px 13px;">
+																								<div class="package-container platform-container" id="xlarge"><div class="package-container-cover"></div>
+																									<div class="package-header2"><span class="" style="">Extra Large</span></div>
+																									<div class="package-body2">
+																										<table class="w100">
+																											<tr><td class="p-label center label-tweak">Data Transfer</td></tr>
+																											<tr><td class="p-value center value-tweak">10,000 MB</td></tr>
+																											<tr><td class="p-label center label-tweak">Add-ons</td></tr>
+																											<tr><td class="p-value center value-tweak">Included</td></tr>															
+																										</table>
+																									</div>
+																									<div class="package-footer2"><span class="package-price2 f13"><span class="normal">$</span>1100 <span class="normal">per month</span></span></div>
+																								</div>
+																							</td>	
+																							<td style="padding: 15px 0px 15px 13px;">
+																								<div class="package-container platform-container" id="xlarge"><div class="package-container-cover"></div>
+																									<div class="package-header2"><span class="" style="">SUPER Size</span></div>
+																									<div class="package-body2">
+																										<table class="w100">
+																											<tr><td class="p-label center label-tweak">Data Transfer</td></tr>
+																											<tr><td class="p-value center value-tweak">100,000 MB</td></tr>
+																											<tr><td class="p-label center label-tweak">Add-ons</td></tr>
+																											<tr><td class="p-value center value-tweak">Included</td></tr>															
+																										</table>
+																									</div>
+																									<div class="package-footer2"><span class="package-price2 f13"><span class="normal">$</span>2100 <span class="normal">per month</span></span></div>
+																								</div>
+																							</td>	
+																						</tr>
+																					</table>
+																				</div>
+																			</div>
+																		</td>
+																		<td style="padding: 0px 9px 0px 8px;"><div class="relative"><a id="plan-arrow-right"></a></div></td>
+																	</tr>
+																</table>
+															</div>
+														</div><!-- End Slide 1 -->
+
+														<!-- Slide 2 -->
+														<div class="holder" style="background: #eaeff9;">
+															<!-- Button -->
+															<div id="slide1-1"></div>
+															<!-- Plans -->
+															<div style="float: left; height: 162px; width: 510px;">
+																<table class="w100">
+																	<tr><td class="step-header-open" style="padding: 15px 0px 0px 10px;">Details</td></tr>						
+																	<tr>
+																		<td class="field-container"  style="padding: 8px 0px 0px 10px;">
+																			<table style="">
+																				<tr><td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td></tr>
+																			</table>
+																		</td>	
+																	</tr>
+																</table>
+															</div>
+														</div><!-- End Slide 2 -->
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>				
+				</td>
+			</tr>
+</table><!-- End Plan -->
+
+
+<!-- Addons -->
+		<table class="content-table-style white-bg package-addon" style="width: 754px; margin-top: 12px; padding: 0px;" id="support-section">	
+			<tr><td class="addons-head">Select Add-ons</td></tr>
+			<tr>
+                <td class="" style="padding: 0px 15px 15px;">
+                    <!-- Technology -->
+					<div class="click-header"><div class="relative"><img src="@Url.Content("~/Content/img/icon-upgrade-24-technology.png")"/><div class="create-box-arrow-open"></div>Technology</div></div>
+                    <div class="click-body p0" style="display: none;">
+                        @foreach (var addOn in Model.OtherAddOns)
+                        {
+                            <div class="container_16">
+                                <div id="grid">
+                                    <div class="grid_12">
+                                        <div class="box"><h2>@(addOn.Title)</h2><p>@(addOn.Description)</p></div>
+                                    </div>
+                                    <div class="grid_4">
+                                        <div class="box"><label>
+                                                             <input type="checkbox" value="@(addOn.Title)"/>
+                                                             @if (addOn.SetUpFee.Equals(Decimal.Zero))
+                                                             {
+                                                                 <span class="">$@(addOn.MonthlyFeeAbsoluteFormatted)</span><span class="normal f11">per month</span>
+                                                             }
+                                                             else
+                                                             {
+                                                                <span class="">$@(addOn.SetUpFeeAbsoluteFormatted) </span>
+                                                             }
+                                                                 
+                                                         </label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    
+                
+                    @foreach (var addOnGroup in Model.AddOnGroups)
+                    {
+                        <!-- Technology -->
+                        <div class="click-header"><div class="relative"><img src="@Url.Content("~/Content/img/icon-upgrade-24-" + addOnGroup.GroupName.ToLowerInvariant()+".png")"/><div class="create-box-arrow-open"></div>@(addOnGroup.GroupName)</div></div>
+                        <div class="click-body p0" style="display: none;">
+                            @foreach (var addOn in addOnGroup.AddOns)
+                            {
+                                <div class="container_16">
+                                    <div id="grid">
+                                        <div class="grid_12">
+                                            <div class="box"><h2>@(addOn.Title)</h2><p>@(addOn.Description)</p></div>
+                                        </div>
+                                        <div class="grid_4">
+                                            <div class="box"><label>
+                                                                 <input type="radio" name="@(addOnGroup.GroupName)" value="@(addOn.Title)"/>
+                                                                 @if (addOn.SetUpFee.Equals(Decimal.Zero))
+                                                                 {
+                                                                     <span class="">$@(addOn.MonthlyFeeAbsoluteFormatted)</span><span class="normal f11">per month</span>
+                                                                 }
+                                                                 else
+                                                                 {
+                                                                     <span class="">$@(addOn.SetUpFeeAbsoluteFormatted) </span>
+                                                                 }
+                                                                 
+                                                             </label></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+					
+                    <!-- Data Transfer -->
+                    <div class="click-header"><div class="relative"><img style="" src="img/icon-upgrade-24-datatransfer.png"/><div class="create-box-arrow-open"></div>Data Transfer</div></div>
+                    <div class="click-body p0" style="display: none;">
+                        <div class="container_16">
+                            <div id="grid">
+                                <div class="grid_12">
+                                    <div class="box"><h2>Increased Data Transfer</h2><p>Add to your base Data Transfer total up to 25,000 MB.</p>
+                                        <table cellspacing="0" cellpadding="0" style="position: absolute; right: 8px; bottom: 15px;"><!-- right: 28px; bottom: 0px; -->
+                                            <tr>
+                                                <td class="inputfield" style="padding: 0px 0px 0px 0px; vertical-align: top;"><a class="plus btn-off" id="data-transfer-minus">&minus;</a></td>
+                                                <td class="inputfield" style="padding: 0px 4px 0px 4px; vertical-align: top;"><form><input id="data-transfer" class="text-field" type="text" placeholder="5,000 MB" style="width: 55px; text-align: right; height: 17px; line-height: 17px; font-size: 12px;"/></form></td>
+                                                <td class="inputfield" style="padding: 0px 0px 0px 0px; vertical-align: top;"><a class="plus btn-off" id="data-transfer-plus">+</a></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="grid_4">
+                                    <div class="box"><label><input type="checkbox"/><span class="">$100 </span><span class="normal f11">per month</span></label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DataPages -->
+                    <div class="click-header"><div class="relative"><img src="img/icon-upgrade-24-datapages.png" style="left: -7px;"/><div class="create-box-arrow-open"></div>DataPages</div></div>
+                    <div class="click-body p0" style="display: none;">
+                        <div class="container_16">
+                            <div id="grid">
+                                <div class="grid_12">
+                                    <div class="box"><h2>White Label</h2><p>The ability to have unbranded apps and remove Caspio's logo.</p></div>
+                                </div>
+                                <div class="grid_4">
+                                    <div class="box"><label><input type="checkbox"/><span class="">$20 </span><span class="normal f11">per month</span></label></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container_16">
+                            <div id="grid">
+                                <div class="grid_12">
+                                    <div class="box"><h2>API and Plugin for Microsoft Office</h2><p>The following add-on features are available a la carte to Small plans.</p></div>
+                                </div>
+                                <div class="grid_4">
+                                    <div class="box"><label><input type="checkbox"/><span class="">$45 </span><span class="normal f11">one time fee</span></label></div>
+                                </div>
+                            </div>
+                        </div>	
+                        <div class="container_16">
+                            <div id="grid">
+                                <div class="grid_12">
+                                    <div class="box"><h2>API and Plugin for Microsoft Office</h2><p>The following add-on features are available a la carte to Small plans.</p></div>
+                                </div>
+                                <div class="grid_4">
+                                    <div class="box">
+                                        <label style="margin-top: 9px;">
+                                            <input type="checkbox" style="top: 9px;"/>
+                                            <span class="">$50 </span>
+                                            <span class="normal f11">per month</span><span class="bold none"> &amp; </span><br>
+                                                                                                                           <span class="normal f12 l12" style="padding-left: 30px;">(<b>+</b> $25 </span>
+                                                                                                                           <span class="normal f11">one time set-up fee)</span>										
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>															
+                    </div>
+                    <!-- Email -->
+                    <div class="click-header"><div class="relative"><img style="" src="img/icon-upgrade-24-email.png"/><div class="create-box-arrow-open"></div>Email</div></div>
+                    <div class="click-body p0" style="display: none;">
+                        <div class="container_16">
+                            <div id="grid">
+                                <div class="grid_12"><div class="box" style="padding: 10px 10px 8px 10px;"><h2 class="f14">20 GB</h2></div></div>
+                                <div class="grid_4"><div class="box"><label style="margin-top: 11px;"><input type="radio" name="storage" value="1"/><span class="">$20 </span><span class="normal f11">per month</span></label></div></div>
+                            </div>
+                        </div>
+                        <div class="container_16">
+                            <div id="grid">
+                                <div class="grid_12"><div class="box" style="padding: 10px 10px 8px 10px;"><h2 class="f14">40 GB</h2></div></div>
+                                <div class="grid_4"><div class="box"><label style="margin-top: 11px;"><input type="radio" name="storage" value="2"/><span class="">$40 </span><span class="normal f11">per month</span></label></div></div>
+                            </div>
+                        </div>									
+                    </div>
+                    <!-- Storage -->
+                    <div class="click-header"><div class="relative"><img style="" src="img/icon-upgrade-24-storage.png"/><div class="create-box-arrow-open"></div>Storage</div></div>
+                    <div class="click-body p0" style="display: none;">
+                        <div class="container_16">
+                            <div id="grid">
+                                <div class="grid_12"><div class="box" style="padding: 10px 10px 8px 10px;"><h2 class="f14">20 GB</h2></div></div>
+                                <div class="grid_4"><div class="box"><label style="margin-top: 11px;"><input type="radio" name="storage" value="1"/><span class="">$20 </span><span class="normal f11">per month</span></label></div></div>
+                            </div>
+                        </div>
+                        <div class="container_16">
+                            <div id="grid">
+                                <div class="grid_12"><div class="box" style="padding: 10px 10px 8px 10px;"><h2 class="f14">40 GB</h2></div></div>
+                                <div class="grid_4"><div class="box"><label style="margin-top: 11px;"><input type="radio" name="storage" value="2"/><span class="">$40 </span><span class="normal f11">per month</span></label></div></div>
+                            </div>
+                        </div>									
+                    </div>
+                    <!-- Support -->
+                    <div class="click-header"><div class="relative"><img style="" src="img/icon-upgrade-24-support.png"/><div class="create-box-arrow-open"></div>Support</div></div>
+                    <div class="click-body p0" style="display: none;">
+                        <div class="container_16">
+                            <div id="grid">
+                                <div class="grid_12"><div class="box" style="padding: 10px 10px 8px 10px;"><h2 class="f14">20 GB</h2></div></div>
+                                <div class="grid_4"><div class="box"><label style="margin-top: 11px;"><input type="radio" name="storage" value="1"/><span class="">$20 </span><span class="normal f11">per month</span></label></div></div>
+                            </div>
+                        </div>
+                        <div class="container_16">
+                            <div id="grid">
+                                <div class="grid_12"><div class="box" style="padding: 10px 10px 8px 10px;"><h2 class="f14">40 GB</h2></div></div>
+                                <div class="grid_4"><div class="box"><label style="margin-top: 11px;"><input type="radio" name="storage" value="2"/><span class="">$40 </span><span class="normal f11">per month</span></label></div></div>
+                            </div>
+                        </div>									
+                    </div>
+                </td>
+			</tr>
+		</table><!-- End Addons -->

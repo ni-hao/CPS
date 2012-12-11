@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<script type="text/javascript">
+    $(function () {
+        $("#clickBtn").click(function () {
+            $.post("/Package/AjaxDemo", { "h2": $("h2").text() },
+                function (data) {
+                    $("#displayInfo").text(data.info);
+                }
+            );
+        });
+    });
+</script>
+
+
+<h2>Index</h2>
+
+<input id="clickBtn" type="button" value="Click Me" />
+<div id="displayInfo"></div>

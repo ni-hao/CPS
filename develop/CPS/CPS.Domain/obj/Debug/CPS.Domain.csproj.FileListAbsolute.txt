@@ -1,0 +1,4 @@
+D:\work\workspace\cps\develop\CPS\CPS.Domain\bin\Debug\CPS.Domain.dll
+D:\work\workspace\cps\develop\CPS\CPS.Domain\bin\Debug\CPS.Domain.pdb
+D:\work\workspace\cps\develop\CPS\CPS.Domain\obj\Debug\CPS.Domain.dll
+D:\work\workspace\cps\develop\CPS\CPS.Domain\obj\Debug\CPS.Domain.pdb

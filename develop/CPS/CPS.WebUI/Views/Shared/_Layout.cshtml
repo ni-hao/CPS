@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" media="all" href="@Url.Content("~/Content/style/buttons-tabs.css")">
+<link rel="stylesheet" type="text/css" media="all" href="@Url.Content("~/Content/style/main-style.css")">
+<link rel="stylesheet" type="text/css" media="all" href="@Url.Content("~/Content/style/overrides.css")">
+<script type="text/javascript" src="@Url.Content("~/Content/javascript/random.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/javascript/jquery-1.8.0.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/javascript/jquery-ui-1.8.23.custom.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/javascript/bootstrap-tab.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/javascript/bootstrap-dropdown.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/javascript/bootstrap-transition.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/javascript/bootstrap-modal.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/javascript/bootstrap-button.js")"></script>
+
+@if (false)
+{ 
+        <script src="@Url.Content("~/Scripts/jquery-1.5.1-vsdoc.js")" type="text/javascript"></script> 
+}
+</head>
+
+<body>
+    @RenderBody()
+    
+    
+
+<!-- javascript ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+
+<!-- page specific javascript ============================================= -->
+
+
+<script>
+    $(document).ready(function () {
+        $("#slide1-1").click(function () {
+            $("#slide1_images").css("right", "0");
+            $("#slide1-2").toggle("blind", {}, 1);
+            // $('#hide-plan-text').removeClass('none');
+
+        });
+        $("#slide1-2").click(function () {
+            $("#slide1_images").css("right", "-600px");
+            $("#slide1-2").toggle("blind", {}, 1);
+            // $('#hide-plan-text').addClass('none');
+
+        });
+    });
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $("#plan-arrow-left").click(function () {
+            $("#slide1_images2").css("left", "0");
+            $('#plan-arrow-left').addClass('plan-arrow-off');
+            $('#plan-arrow-right').removeClass('plan-arrow-off');
+        });
+        $("#plan-arrow-right").click(function () {
+            $("#slide1_images2").css("left", "-135px");
+            $('#plan-arrow-right').addClass('plan-arrow-off');
+            $('#plan-arrow-left').removeClass('plan-arrow-off');
+        });
+    });
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $(".click-header").click(function () {
+            $(this).find('div.create-box-arrow-open').toggleClass("create-box-arrow-close", 1);
+            $(this).next("div.click-body").toggle("blind", {}, 120);
+        });
+    });
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $("#expand-datapages").click(function () {
+            $(this).find('.object-list-open').toggleClass("object-list-close", 1);
+            $("#datapage-list").toggle("blind", {}, 60);
+        });
+
+        $("#expand-tables").click(function () {
+            $(this).find('.object-list-open').toggleClass("object-list-close", 1);
+            $("#table-list").toggle("blind", {}, 60);
+        });
+
+        $("#expand-styles").click(function () {
+            $(this).find('.object-list-open').toggleClass("object-list-close", 1);
+            $("#style-list").toggle("blind", {}, 60);
+        });
+
+    });
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $(".head-toggle").click(function () {
+            $(this).find('div.create-box-arrow-open').toggleClass("create-box-arrow-close", 1);
+            $(this).next("div.inner-box-content").toggle("blind", {}, 120);
+
+        });
+    });
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $(".platform-container").click(function () {
+
+            var thiscontainer = $(this).closest('div.package-container');
+
+            $(".platform-container").removeClass("package-selected", 1);
+            $(this).addClass("package-selected", 1);
+            $('#support-section').removeClass("opacity-04");
+            $('#addons-section').removeClass("opacity-04");
+            $('#next-button').removeClass("btn-dis");
+
+            $('#cart-free-trial').addClass("hide");
+            $('#cart-show-plat').removeClass("hide");
+            $('#cart-monthly-off').addClass("hide");
+            $('#cart-monthly-on').removeClass("hide");
+
+            if ($("#support-section").is(':hidden')) {
+                $("#support-section").toggle("blind", {}, 200);
+                $("#addons-section").toggle("blind", {}, 200);
+            };
+        })
+    });
+</script>
+				
+
+<script>
+    $(document).ready(function () {
+        $(".support-container").click(function () {
+            $(".support-container").removeClass("package-selected-support", 1);
+            $(this).addClass("package-selected-support", 1);
+
+            $('#cart-free-trial').addClass("hide");
+            $('#cart-show-sup').removeClass("hide");
+            $('#cart-monthly-off').addClass("hide");
+            $('#cart-monthly-on').removeClass("hide");
+
+        })
+    });
+</script>
+
+<!-- *********** ************ -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#show-plan-details").click(function () {
+            if ($(".plan-details").is(':visible')) {
+                $(".plan-details").addClass("hide", 1);
+                $(this).find('div#plan-arrow').toggleClass("create-box-arrow-open", 1);
+                $(this).find('div#plan-arrow').toggleClass("create-box-arrow-close", 1);
+            }
+
+            else {
+                $(".plan-details").removeClass("hide", 1);
+                $(this).find('div#plan-arrow').toggleClass("create-box-arrow-open", 1);
+                $(this).find('div#plan-arrow').toggleClass("create-box-arrow-close", 1);
+
+            }
+            return false;
+        });
+    });
+</script>
+
+<!-- *********** ************ -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#show-sup-details").click(function () {
+            if ($(".sup-details").is(':visible')) {
+                $(".sup-details").switchClass("row-view", "hide", 1);
+                $(this).find('div.plus-sup').css("background-position", "-9px 0px");
+            }
+            else {
+                $(".sup-details").switchClass("hide", "row-view", 1);
+                $(this).find('div.plus-sup').css("background-position", "-9px -9px");
+            }
+            return false;
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#show-plat-details").click(function () {
+            if ($(".plat-details").is(':visible')) {
+                $(".plat-details").switchClass("row-view", "hide", 1);
+                $("#show-plat-details > td").toggleClass("b-line-b", 1);
+                $(this).find('div.plus-plat').css("background-position", "0px 0px");
+            }
+            else {
+                $(".plat-details").switchClass("hide", "row-view", 1);
+                $("#show-plat-details > td").toggleClass("b-line-b", 1);
+                $(this).find('div.plus-plat').css("background-position", "0px -9px");
+            }
+            return false;
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#show-adds-details").click(function () {
+            if ($(".adds-details").is(':visible')) {
+                $(".adds-details").switchClass("row-view", "hide", 1);
+                $(this).find('div.plus-add').css("background-position", "-18px 0px");
+            }
+            else {
+                $(".adds-details").switchClass("hide", "row-view", 1);
+                $(this).find('div.plus-add').css("background-position", "-18px -9px");
+            }
+            return false;
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#show-adds-details-cart").click(function () {
+            if ($(".adds-details-cart").is(':visible')) {
+                $(".adds-details-cart").switchClass("row-view", "hide", 1);
+                $(this).find('div.plus-add').css("background-position", "-18px 0px");
+            }
+            else {
+                $(".adds-details-cart").switchClass("hide", "row-view", 1);
+                $(this).find('div.plus-add').css("background-position", "-18px -9px");
+            }
+            return false;
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#show-sup-details-cart").click(function () {
+            if ($(".sup-details-cart").is(':visible')) {
+                $(".sup-details-cart").switchClass("row-view", "hide", 1);
+                $(this).find('div.plus-sup').css("background-position", "-9px 0px");
+            }
+            else {
+                $(".sup-details-cart").switchClass("hide", "row-view", 1);
+                $(this).find('div.plus-sup').css("background-position", "-9px -9px");
+            }
+            return false;
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#show-plat-details-cart").click(function () {
+            if ($(".plat-details-cart").is(':visible')) {
+                $(".plat-details-cart").switchClass("row-view", "hide", 1);
+                $("#show-plat-details-cart > td").toggleClass("b-line-b", 1);
+                $(this).find('div.plus-plat').css("background-position", "0px 0px");
+            }
+            else {
+                $(".plat-details-cart").switchClass("hide", "row-view", 1);
+                $("#show-plat-details-cart > td").toggleClass("b-line-b", 1);
+                $(this).find('div.plus-plat').css("background-position", "0px -9px");
+            }
+            return false;
+        });
+    });
+</script>
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $(".box-open > .relative").click(function () {
+
+            $(this).find('div').toggleClass("create-box-arrow-open", 1);
+            $(this).find('div').toggleClass("create-box-arrow-close", 1);
+            $(this).closest('table').find("div.box-body").toggleClass("hide", 1);
+            $(this).closest('table').toggleClass("minimized", 1);
+        });
+    });
+</script>
+
+<script>
+
+    $(function () {
+        $.extend($.fn.disableTextSelect = function () {
+            return this.each(function () {
+                if ($.browser.mozilla) {//Firefox
+                    $(this).css('MozUserSelect', 'none');
+                } else if ($.browser.msie) {//IE
+                    $(this).bind('selectstart', function () { return false; });
+                } else {//Opera, etc.
+                    $(this).mousedown(function () { return false; });
+                }
+            });
+        });
+        $('.noSelect').disableTextSelect(); //No text selection on elements with a class of 'noSelect'
+    });
+
+</script>
+
+<script>
+    $(document).ready(function () {
+        $(".remove-single").click(function () {
+            $(this).closest('tr').css('display', 'none');
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#").click(function () {
+            $("#save-button").switchClass("btn-dis", "btn-on", 1);
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $(".list-row > td:first-child").click(function () {
+            $(this).find('.object-list-open').toggleClass("object-list-close", 1);
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".list-row-hidden > td:first-child").click(function () {
+            $(this).find('.object-list-open').toggleClass("object-list-close", 1);
+        });
+    });
+</script>
+</body>
+</html>

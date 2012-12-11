@@ -1,0 +1,24 @@
+﻿@using CPS.WebUI.Common
+@model String
+
+<select class="select-field" style="width: 208px;">
+    @{bool
+        isEmpty = String.IsNullOrEmpty(Model) ? true : false;
+        if (isEmpty)
+        {
+            <option selected="selected" value=""></option>
+        }
+      }
+    @foreach(var state in CommonInfo.States)
+    {
+        if (Model.Equals(state))
+        {
+            <option selected="selected" value="@(state)" > @(state)</option>
+        }
+        else
+        {
+            <option value="@(state)" > @(state)</option>
+        }
+    }
+</select>
+

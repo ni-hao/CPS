@@ -1,0 +1,1578 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8">
+<title>Caspio</title>
+
+<!-- style ================================================== -->
+<!-- General -->
+<link rel="stylesheet" type="text/css" media="all" href="style/buttons-tabs.css">
+<link rel="stylesheet" type="text/css" media="all" href="style/main-style.css">
+<link rel="stylesheet" type="text/css" media="all" href="style/overrides.css">
+
+<!-- Page specific -->
+
+<style type="text/css" media="screen"></style>
+
+<style>
+
+
+table.content-table-style {
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+	width: 100%;
+	min-height: 50px;
+	border: 1px solid #d2d2d2;
+	box-shadow: 0px 0px 1px 1px #f2f3f4;
+	border-radius:1px;
+	}
+
+#select-tables tr.list-row:hover > td.data-row-cell {
+	cursor: auto;
+	background: #fff;
+	}
+
+.create-box-t1 {
+	margin: 0px;
+	padding: 14px 15px 15px 15px;
+	background: #fff;
+	width: 100%;
+	}
+
+.create-box-t2 {
+	margin: 0px;
+	padding: 14px 15px 15px 15px;
+	background: #fdfdfd;
+	width: 100%;
+	}
+
+.create-box-t3 {
+	margin: 0px;
+	padding: 14px 15px 15px 15px;
+	background: transparent;
+	width: 100%;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #d7dfe9; /* deeaf2  dbe2ec */
+	}
+
+table.create-box-t3:last-child {
+	border-bottom: 0px solid #deeaf2;
+	}
+
+.minimized {
+	background: #eaeff9;
+	}
+
+
+table.minimized:not(:last-child)    {
+	border-bottom: 1px solid #d0d9e8;
+	}
+
+table.minimized:first-child    {
+	border-top: 1px solid #fff;
+	}
+
+
+
+
+.create-box-content {
+	border-top: 1px solid #ddd; /* deeaf2 e5e5e5 eaeff9 ddd ccc d2d2d2 */
+	background: #f8fafd;
+	}
+
+
+
+.first-box {
+	border-top: 1px solid #f0f2f5; /* eaeff9 f0f2f5 eef0f3 */
+	}
+
+
+.border-top-white {
+	border-top: 1px solid #fff;
+	}
+
+.border-bot-white {
+	border-top: 1px solid #fff;
+	}
+
+.border-bot-blue {
+	border-bottom: 1px solid #deeaf2;
+	}
+
+.border-bot-grey {
+	border-bottom: 1px solid #ddd;
+	}
+
+
+
+.select-container-blue {
+	margin: 0px;
+	padding: 15px 20px 20px 20px;
+	box-sizing: border-box;
+	background: #f8fafd;
+	width: 100%;
+	}
+
+.create-box-arrow-open {
+	height: 7px;
+	width: 14px;
+	position: absolute;
+	top: -3px;
+	right: 0px;
+	cursor: pointer;
+	background: url(img/step-down-arrow-closed2.png) no-repeat left top;
+	}
+
+.create-box-arrow-close {
+	height: 7px;
+	width: 14px;
+	position: absolute;
+	top: -3px;
+	right: 0px;
+	cursor: pointer;
+	background: url(img/step-down-arrow-open-flip.png) no-repeat left top;
+	}
+
+
+
+
+.step-header-open {
+	font-size: 13px;
+	font-weight: normal; /* bold normal */
+	color: #3d82ab;
+	padding: 0px 0px 0px 0px;
+	vertical-align: top;
+	}
+
+
+
+
+/* checkbox */
+
+label {
+    	display: block;
+    	padding-left: 0px;
+    	text-indent: 0px;
+	}
+
+
+
+.feature-label {
+	font-size: 11px;
+	font-weight: normal;
+	position: absolute;
+
+	color: #333;
+	text-align: left;
+	}
+
+.feature-value {
+	font-size: 12px;
+	font-weight: bold;
+	position: absolute;
+	color: #3186ad;
+	}
+
+.package-price {
+	font-size: 23px;
+	font-weight: bold;
+	text-align: center;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	color: #3186ad;
+	width: 100%;
+	border-top: 1px solid #eee;
+	padding: 7px 0;
+	display: block;
+	}
+
+.p-price {
+	font-size: 19px;
+	font-weight: bold;
+	text-align: center;
+	position: absolute;
+	left: 0px;
+	top: 3px;
+	color: #3186ad;
+	width: 100%;
+	display: block;
+	}
+
+.p-name {
+	font-size: 21px;
+	font-weight: bold;
+	text-align: center;
+	color: #3186ad;
+	width: 100%;
+	}
+
+
+.package-header2 {
+	text-align: left;
+	padding: 0px 0px 0px 0px; 
+	margin: 0px 0px 0px 0px;
+	height: 27px;
+	width: 100%;
+	cursor: pointer;
+	border: 1px solid #e5e5e5;
+	border-width: 0px 0px 0px 0px;
+	border-style: dashed solid solid solid;	
+	border-color: #ddd #ddd #f1f4f9 #ddd;	
+	background: transparent; /* f8fafd  */
+	position: relative;
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5); 
+	}
+
+.package-body2 {
+	text-align: left;
+	padding: 0px 0px 0px 0px; 
+	margin: 0px 0px 0px 0px;
+	height: 78px;
+	width: 100%;
+	cursor: pointer;
+	border: 0px solid #dcdcdc;
+	border-width: 0px 0px 0px 0px;
+	border-style: solid solid solid solid;
+	border-color: #fff #ddd #ddd #ddd;	/* e5e5e5 e6ecf3 e6ecf3 f1f4f9 */
+	background: transparent; /* f8fafd  */
+	position: relative;
+	box-shadow: inset 1px 0px 0 rgba(255, 255, 255, 0.5); 
+	}
+
+
+.package-footer2 {
+	text-align: center;
+	padding: 0px 0px 0px 0px; 
+	margin: 0px 0px 0px 0px;
+	height: 28px;
+	width: 100%;
+	cursor: pointer;
+	border: 1px solid #eee;
+	border-width: 1px 0px 0px 0px;
+	border-color: #e5e5e5 #ddd #fff #ddd;	
+	background: #fff;
+	position: absolute;
+	bottom: 0px;
+	box-shadow: inset 0px 1px 0 rgba(221, 221, 221, 0.2); 	
+	}
+
+
+.package-price2 {
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	color: #3186ad; /* 3186ad  184478 738fb1 476ea5 6d8199 3b5b87 */
+	width: 100%;
+	padding: 3px 0 4px;
+	display: block;
+	}
+
+
+
+
+
+
+
+.support-bg {
+	background: transparent;		
+	}
+
+
+.package-body2.support-bg {
+	background: transparent; /* eaeff9 fbfbfb eefbdb f2fce4 f2fce3 */
+	}
+
+.package-header2.support-bg {
+	border-bottom: 0px solid #dae2ef;
+	}
+
+.package-body2.support-bg {
+	border-top: 0px solid #f9fafd;
+	}
+
+.package-footer2.support-bg {
+	border-top: 1px solid #dcdcdc;
+	background: #fff;
+	}
+
+.p-deets {
+	font-size: 11px;
+	font-weight: normal;
+	color: #666;
+	text-align: left;
+	padding: 1px 18px 0px 0px;
+	vertical-align: bottom;
+	display: table-cell;
+	}
+
+#current-package .p-label {
+	padding: 6px 0px 6px 0px;
+	}
+
+#current-package .p-value {
+	padding: 0px 0px 2px 0px;
+	}
+
+
+
+
+/********* Right Steps **********/
+
+
+
+
+.b-ccc-b {
+	border-bottom: 1px solid #ccc;
+	}
+
+.b-ddd-b {
+	border-bottom: 1px solid #ddd;
+	}
+
+.b-eee-b {
+	border-bottom: 1px solid #eee;
+	}
+
+.b-line-b {
+	border-bottom: 1px dashed rgba(114, 164, 53, 0.1);
+	}
+
+
+#current-package  table.plan  tr:last-child > td {
+	padding-bottom: 4px;
+}
+
+#current-package  table.plan  tr > td:last-child {
+	padding-right: 0px;
+}
+
+.p-label {
+	font-size: 11px;
+	font-weight: normal;
+	color: #333;
+	text-align: left;
+	padding: 6px 8px 0px 8px;
+	vertical-align: top;
+	white-space: nowrap;
+	}
+
+.p-value {
+	font-size: 12px;
+	font-weight: bold;
+	color: #3d82ab;
+	text-align: left;
+	padding: 1px 8px 0px 8px;
+	vertical-align: top;	
+	white-space: nowrap;	
+	}
+
+.p-value-deet {
+	font-size: 11px;
+	font-weight: normal;
+	color: #666;
+	text-align: left;
+	padding: 1px 0px 2px 14px;
+	vertical-align: top;	
+	white-space: nowrap;	
+	}
+
+ .bull-sup {
+ 	color: #96c950;
+ 	font-size: 11px;
+   	vertical-align: baseline;
+   	position: relative;
+   	top: 0.1em; 
+   	letter-spacing: 1px;	
+ 	}
+
+ .bull {
+ 	color: #888;
+ 	font-size: 11px;
+   	vertical-align: baseline;
+   	position: relative;
+   	top: 0.1em; 
+   	letter-spacing: 1px;	
+ 	}
+
+
+
+#show-plat-details > td:first-child,
+#show-sup-details > td:first-child,
+#show-adds-details > td:first-child
+{ cursor: pointer; }
+
+#show-plat-details-cart > td:first-child,
+#show-sup-details-cart > td:first-child,
+#show-adds-details-cart > td:first-child
+{ cursor: default; }
+
+
+.addon-green {
+	color: #579370; /* 548e6c 579370 */
+}
+
+
+
+.p-deets {
+	font-size: 11px;
+	font-weight: normal;
+	color: #666;
+	text-align: left;
+	padding: 1px 18px 0px 0px;
+	vertical-align: bottom;
+	display: table-cell;
+	}
+
+#current-package .p-label {
+	padding: 3px 0px 3px 0px;
+	}
+
+#current-package .p-value {
+	padding: 3px 0px 3px 0px;
+	}
+
+#cart-contain .p-value {
+	padding: 3px 8px 3px 8px;
+	}
+
+b {
+	font-weight: bold;
+}
+
+#fields td.field-container:last-child {
+	text-align: right;
+	padding-right: 0px;
+	}
+
+#fields td.field-label {
+	padding-right: 24px;
+	}
+
+#fields td {
+	white-space: nowrap;
+	}
+
+.section-head {
+	height: 30px;
+	line-height: 30px;
+	padding: 0px 12px 0px 12px;
+	font-size: 14px;
+	border-bottom: 1px solid #ddd; 
+	background: #fcfcfc;
+	}
+
+
+
+</style>
+
+</head>
+
+<body>
+<div class="none" style="background: #184478; color: #fff; font-size: 15px; font-weight: bold; height: 100px; width: 400px; position: absolute; top: 0px; left: 0px; padding: 15px; letter-spacing: 1px;"><span class="">Feedback</span> <span class="">FEEDBACK</span> <span class="normal">Feedback</span> <span class="normal">FEEDBACK</span></div>
+
+<div class="wrapper"><!-- Begin Wrapper -->
+    <div class="wrapright-full"><div id="rightbox" class="rightbox-full" ><div class="title-bar"><a class="title" href="table-list.html">Account</a><img class="crumb-arrow" src="img/crumb-arrow.png"/><span class="title">Upgrade Package</span><a class="quickhelp-open" id="open-help"></a></div>
+	<div class="relative"><img src="img/down-arrow-white.png" id="help-arrow"/><div id="quick-help" class="helpfixed"><div class="helpinner"><h1>Help with Tables</h1></div></div></div>
+
+	<div class="work-tier1"><!-- Begin Work Tier 1 -->
+		
+
+
+<style>
+
+.left-step-container-on {
+	color: #3d82ab;
+	font: normal normal 13px/35px "Helvetica", Arial, sans-serif;
+	height: 35px;	
+	background: #476ea5; 
+	border: 1px solid #3b5b87; 
+	border-width: 1px 1px 1px 1px; 
+	padding: 0px 5px 0px 8px;	
+	cursor: default;	
+	}
+
+.left-step-container {
+	color: #3d82ab;
+	font: normal normal 13px/35px "Helvetica", Arial, sans-serif;
+	height: 35px;		
+	background: #fbfbfb; 
+	border: 1px solid #dddddd; 
+	border-width: 1px 1px 1px 1px;
+	padding: 0px 5px 0px 8px;	
+	cursor: default;
+	}
+
+.left-step-container-on .step-name {
+	display: inline-block;
+	font-weight: normal;
+	font: normal normal 13px/13px "Helvetica", Arial, sans-serif;
+	color: #fff;
+	cursor: default;
+	}
+
+.left-step-container .step-name {
+	display: inline-block;
+	font-weight: normal;
+	font: normal normal 13px/13px "Helvetica", Arial, sans-serif;
+	color: #555;
+	cursor: default;	
+	}
+
+.left-step-container > div, .left-step-container-on > div {
+	width: 168px; 
+	padding-left: 5px;
+	position: relative;
+	}
+
+#cart-contain .p-value {
+	padding: 3px 12px 3px 12px;
+	}
+#cart-contain .p-label {
+	padding: 3px 12px 3px 12px;
+	}
+
+#cart-contain .p-cart-l {
+padding: 0px 3px 3px 0px;
+}
+
+#cart-contain .p-cart-r {
+padding: 0px 0px 3px 0px;
+}
+</style>
+
+		<div style="position: absolute; top: 49px; left: 789px; z-index: 1000;">
+			<table class="content-table-style white-bg" style="width: 215px; border: 0px;">	
+				<tr>
+					<td>
+						<!-- B3 -->
+						<table class="create-box-t1" id="cart-contain" style="padding: 0px; border-collapse: collapse;">
+							<tr><td class="left-step-container" style="border-bottom: 1px solid #3b5b87;"><div><span class="step-name">Configure Package</span></div></td></tr>
+							<tr><td class="left-step-container-on"><div><span class="step-name">Contact Information</span></div></td></tr>
+							<tr><td class="left-step-container" style="border-top: 1px solid #3b5b87;"><div style="width: 186px;"><span class="step-name">Billing Information &amp; Summary</span></div></td></tr>
+							<tr>
+								<td style="padding: 7px 0px 0px; border: 1px solid #dddddd; border-width: 0px 1px 1px 1px; ">
+									<table class="w100" style="border-top: 0px solid #eee; margin-top: 0px;">
+										<tr><td class="p-value blue2 f12 normal" style="padding-top: 0px; border-bottom: 0px solid #eee;">Your Package</td></tr>
+									</table>
+									<table class="w100">
+										<tr>
+											<td style="padding: 0px 12px 0px 12px;">
+												<table class="w100" id="cart-monthly-on" style="border-top: 0px solid #eee; border-bottom: 0px solid #eee; margin: 4px 0px 0px;">
+													<tr><td class="p-label grey3 f11 bold p-cart-l">Monthly Fees</td></tr>
+												</table>												
+												<table class="w100"><col><col width="100%">
+													<tr><td class="p-label grey3 f12 p-cart-l">Medium <span class="normal">Platform Plan</span></td><td class="p-value right grey3 normal f12 p-cart-r">$300</td></tr>										
+													<tr><td class="p-label grey3 f12 p-cart-l">5 GB Storage</td><td class="p-value right grey3 normal f12 p-cart-r">$50</td></tr>
+													<tr><td class="p-label grey3 f12 p-cart-l">White Label</td><td class="p-value right grey3 normal f12 p-cart-r">$150</td></tr>										
+												</table>
+												<table class="w100" style="border: 1px solid #eee; border-width: 1px 0px 0px 0px; background: #fff; margin-top: 1px;">
+													<tr><td class="p-label grey3 f12 bold" style="padding: 4px 3px 4px 0px">Monthly Total</td><td class="p-value right grey3 bold" style="padding: 4px 0px 4px 3px">$500</td></tr>
+												</table>
+											</td>
+										</tr>									
+									</table>									
+									<table class="w100">
+										<tr>
+											<td style="padding: 10px 12px 10px 12px;">												
+												<table class="w100" id="cart-monthly-on" style="border-top: 0px solid #eee; border-bottom: 0px solid #eee; margin: 4px 0px 0px;">
+													<tr><td class="p-label grey3 f11 bold p-cart-l">One-time Fees</td></tr>
+												</table>												
+												<table class="w100"><col><col width="100%">
+													<tr><td class="p-label grey3 f12 p-cart-l">Backup Recovery</td><td class="p-value right grey3 normal f12 p-cart-r">$50</td></tr>
+													<tr><td class="p-label grey3 f12 p-cart-l">Developer Support - 2hrs</td><td class="p-value right grey3 normal f12 p-cart-r">$300</td></tr>										
+												</table>
+												<table class="w100" style="border: 1px solid #eee; border-width: 1px 0px 0px 0px; background: #fff; margin-top: 1px;">
+													<tr><td class="p-label grey3 f12 bold" style="padding: 4px 3px 4px 0px">One-time total</td><td class="p-value right grey3 bold" style="padding: 4px 0px 4px 3px">$350</td></tr>
+												</table>											
+											</td>
+										</tr>									
+									</table>	
+									<table class="w100" id="cart-monthly-off" style="border-top: 1px solid #ddd; background: #f8fafd;">
+										<tr><td class="p-label orange bold f12" style="padding-top: 8px;">Amount Due Now</td><td class="p-value right orange f12" style="padding-top: 8px; padding-bottom: 8px;">$850</td></tr>
+									</table>						
+								</td>
+							</tr>
+						</table>					
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<table class="content-table-style white-bg" style="width: 754px; margin-top: 0px;">	
+			<tr>
+				<td>
+					<!-- B3 -->
+					<table class="create-box-t1" id="current-package" style="padding: 0px;">						
+						<tr style="background: #fcfcfc;">
+							<td class="section-head blue2 f13">Contact Information</td>
+							<td class="section-head" style="color: #184478;"><a href="http://www.caspio.com/company/legal/privacy-statement.aspx" target="_blank" class="inline-text-edits" style="font-size: 11px; padding-left: 35px; padding-right: 0px; float: right;">Privacy Statement</a></td>
+						</tr>						
+						<tr>
+							<td style="padding: 4px 12px 8px; border-left: 0px solid #ddd; display: table-cell;" colspan="2">
+								<table class="w100" id="body1a">
+									<tr class="hide">
+										<td class="step-header-open" style="padding-right: 0px;">Contact Information <a href="http://www.caspio.com/company/legal/privacy-statement.aspx" target="_blank" class="blue1" style="font-size: 11px; padding-left: 35px; float: right;">(Privacy Statement)</a></td>
+									</tr>
+									<tr>
+										<td class="" style="padding: 0px 0px 0px 0px;">
+											<table class="w100" id="fields"><col><col width="100%"><col><col>
+												<tr>
+													<td class="field-label" style="padding-top: 12px;" >First Name:</td>
+													<td class="field-container" style="padding-top: 12px;" ><input class="text-field" type="text" placeholder="Adam"  id="contactchange" /></td>
+													<td class="field-label" style="padding-top: 12px;" >Email Address:</td>
+													<td class="field-container" style="padding-top: 12px;" ><input class="text-field" type="text" placeholder="adam.groat@caspio.com" /></td>
+												</tr>
+												<tr>
+													<td class="field-label" >Last Name:</td>
+													<td class="field-container"><input class="text-field" type="text" placeholder="Groat" /></td>
+													<td class="field-label" >URL:</td>
+													<td class="field-container"><input class="text-field" type="text" placeholder="" /></td>
+												</tr>
+												<tr>
+													<td class="field-label" >Title:</td>
+													<td class="field-container"><input class="text-field" type="text" placeholder="Designer" /></td>
+													<td class="field-label" >Address Line 1:</td>
+													<td class="field-container" ><input class="text-field" type="text" placeholder="" /></td>
+												</tr>
+												<tr>
+													<td class="field-label" >Company:</td>
+													<td class="field-container" ><input class="text-field" type="text" placeholder="Caspio" /></td>
+													<td class="field-label" >Address Line 2:</td>
+													<td class="field-container" ><input class="text-field" type="text" placeholder="" /></td>
+												</tr>
+												<tr>
+													<td class="field-label" >Employees:</td>
+													<td class="field-container">
+														<select class="select-field" style="width: 208px;">
+														<option selected="selected" value=""></option>
+														<option value="2">1-25</option>
+														<option value="3">25-50</option>
+														<option value="3">50-75</option>
+													</td>
+													<td class="field-label" >City:</td>
+													<td class="field-container" ><input class="text-field" type="text" placeholder="" /></td>
+												</tr>
+												<tr>
+													<td class="field-label" >Industry</td>
+													<td class="field-container">
+														<select class="select-field" style="width: 208px;">
+														<option selected="selected" value="">Other</option>
+														<option value="2">Education</option>
+														<option value="3">Technology</option>
+														<option value="3">Medical</option>
+													</td>
+													<td class="field-label" >Country</td>
+													<td class="field-container">
+														<select class="select-field" style="width: 208px;">
+														<option selected="selected" value=""></option>
+														<option value="2">China</option>
+													</td>
+												</tr>
+												<tr>
+													<td class="field-label" >Office Phone:</td>
+													<td class="field-container"><input class="text-field" type="text" placeholder="697-617-5898" /></td>
+													<td class="field-label" >State/Province:</td>
+													<td class="field-container">
+														<select class="select-field" style="width: 208px;">
+														<option selected="selected" value=""></option>
+														<option value="2">Oregon</option>
+													</td>
+												</tr>
+												<tr>
+													<td class="field-label" >Secondary Phone:</td>
+													<td class="field-container"><input class="text-field" type="text" placeholder="" /></td>
+													<td class="field-label" >Zip/Postal Code:</td>
+													<td class="field-container" ><input class="text-field" type="text" placeholder="" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>					
+				</td>
+			</tr>
+		</table>
+		<!--<table class="" style="display: block; border-bottom: 0px; width: 748px; position: absolute; top: 279px; left: 784px;" id="export-buttons">-->
+				<table class="" style="border-bottom: 0px; width: 754px;" id="export-buttons">				
+					<tr>
+						<td class="right" style="padding-top: 10px;">
+							<a <a href="upgrade-step-1.html" class="btn btn-off" style="margin-right: 5px;">Back</a>
+							<a <a href="upgrade-free_step-3.html" class="btn btn-off" id="save-button">Next</a>
+						</td>
+					</tr>
+				</table>
+			</div><!-- tier1 End -->
+        </div><!-- rightbox End -->
+    </div><!-- wrapright End -->
+</div><!-- End Wrapper -->
+
+<!-- javascript ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<script type="text/javascript" src="javascript/random.js"></script>
+<script type="text/javascript" src="javascript/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="javascript/jquery-ui-1.8.23.custom.min.js"></script>
+<script type="text/javascript" src="javascript/bootstrap-tab.js"></script>
+<script type="text/javascript" src="javascript/bootstrap-dropdown.js"></script>
+<script type="text/javascript" src="javascript/bootstrap-transition.js"></script>
+<script type="text/javascript" src="javascript/bootstrap-modal.js"></script>
+<script type="text/javascript" src="javascript/bootstrap-button.js"></script>
+
+<!-- page specific javascript ============================================= -->
+
+<script>
+  $(document).ready(function() {
+    $(".add-on-check > .relative").click(function () {
+		$(this).find('div').toggleClass( "create-box-arrow-open", 1 );
+		$(this).find('div').toggleClass( "create-box-arrow-close", 1 );
+		if ($(".plat").is(':visible')) {
+			$(".plat").switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$(".plat").switchClass( "hide", "row-view", 1 );
+		}
+		return false;
+    });
+  });
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$( "#show-sup-details" ).click(function () {
+		if ($(".sup-details").is(':visible')) {
+			$(".sup-details").switchClass( "row-view", "hide", 1 );
+			$(this).find('div.plus-sup').css("background-position","-9px 0px");
+		}
+		else {
+		$(".sup-details").switchClass( "hide", "row-view", 1 );
+		$(this).find('div.plus-sup').css("background-position","-9px -9px");
+		}
+		return false;
+	});
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$( "#show-plat-details" ).click(function () {
+		if ($(".plat-details").is(':visible')) {
+			$(".plat-details").switchClass( "row-view", "hide", 1 );
+		$("#show-plat-details > td").toggleClass( "b-line-b", 1 );
+		$(this).find('div.plus-plat').css("background-position","0px 0px");		
+
+		}
+		else {
+		$(".plat-details").switchClass( "hide", "row-view", 1 );
+		$("#show-plat-details > td").toggleClass( "b-line-b", 1 );
+		$(this).find('div.plus-plat').css("background-position","0px -9px");		
+
+
+		}
+		return false;
+	});
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$( "#show-adds-details" ).click(function () {
+		if ($(".adds-details").is(':visible')) {
+			$(".adds-details").switchClass( "row-view", "hide", 1 );
+			$(this).find('div.plus-add').css("background-position","-18px 0px");
+		}
+		else {
+		$(".adds-details").switchClass( "hide", "row-view", 1 );
+			$(this).find('div.plus-add').css("background-position","-18px -9px");
+		}
+		return false;
+	});
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$( "#show-adds-details-cart" ).click(function () {
+		if ($(".adds-details-cart").is(':visible')) {
+			$(".adds-details-cart").switchClass( "row-view", "hide", 1 );
+			$(this).find('div.plus-add').css("background-position","-18px 0px");
+		}
+		else {
+		$(".adds-details-cart").switchClass( "hide", "row-view", 1 );
+			$(this).find('div.plus-add').css("background-position","-18px -9px");
+		}
+		return false;
+	});
+});
+</script>
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$( "#show-sup-details-cart" ).click(function () {
+		if ($(".sup-details-cart").is(':visible')) {
+			$(".sup-details-cart").switchClass( "row-view", "hide", 1 );
+			$(this).find('div.plus-sup').css("background-position","-9px 0px");
+		}
+		else {
+		$(".sup-details-cart").switchClass( "hide", "row-view", 1 );
+		$(this).find('div.plus-sup').css("background-position","-9px -9px");
+		}
+		return false;
+	});
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$( "#show-plat-details-cart" ).click(function () {
+		if ($(".plat-details-cart").is(':visible')) {
+			$(".plat-details-cart").switchClass( "row-view", "hide", 1 );
+		$("#show-plat-details-cart > td").toggleClass( "b-line-b", 1 );
+		$(this).find('div.plus-plat').css("background-position","0px 0px");		
+
+		}
+		else {
+		$(".plat-details-cart").switchClass( "hide", "row-view", 1 );
+		$("#show-plat-details-cart > td").toggleClass( "b-line-b", 1 );
+		$(this).find('div.plus-plat').css("background-position","0px -9px");		
+
+
+		}
+		return false;
+	});
+});
+</script>
+
+
+
+
+
+
+
+
+<script>
+	$(function() {
+		$( ".package-container" ).click(function(){
+			$( ".package-container" ).removeClass( "package-selected", 1 );
+			$(this).addClass( "package-selected", 1 );
+			return false;
+		})
+	});
+</script>
+
+<script>
+	$(function() {
+		$( ".support-container" ).click(function(){
+			$( ".support-container" ).removeClass( "package-selected-support", 1 );
+			$(this).addClass( "package-selected-support", 1 );
+			return false;
+		})
+	});
+</script>
+
+<script>
+  $(document).ready(function() {
+    $(".box-open > .relative").click(function () {
+
+		$(this).find('div').toggleClass( "create-box-arrow-open", 1 );
+		$(this).find('div').toggleClass( "create-box-arrow-close", 1 );
+		$(this).closest('table').find("div.box-body").toggleClass("hide", 1 );
+		$(this).closest('table').toggleClass( "minimized", 1 );
+    });
+  });
+</script>
+
+<script>
+
+$(function(){
+	$.extend($.fn.disableTextSelect = function() {
+		return this.each(function(){
+			if($.browser.mozilla){//Firefox
+				$(this).css('MozUserSelect','none');
+			}else if($.browser.msie){//IE
+				$(this).bind('selectstart',function(){return false;});
+			}else{//Opera, etc.
+				$(this).mousedown(function(){return false;});
+			}
+		});
+	});
+	$('.noSelect').disableTextSelect();//No text selection on elements with a class of 'noSelect'
+});
+
+</script>
+
+<script>
+  $(document).ready(function() {
+    $(".remove-single").click(function () {
+		$(this).closest('tr').css('display', 'none');
+    });
+  });
+</script>
+
+
+<script>
+  $(document).ready(function() {
+    $("#export-datapages").click(function () {
+		$( "#datapage-table-right" ).toggleClass( "hide", 1 );
+		$( "#datapage-table-left" ).toggleClass( "hide", 1 );
+    });
+  });
+  $(document).ready(function() {
+    $("#remove-datapages").click(function () {
+		$( "#datapage-table-right" ).toggleClass( "hide", 1 );
+		$( "#datapage-table-left" ).toggleClass( "hide", 1 );
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function() {
+    $("#export-tables").click(function () {
+		$( "#table-table-right" ).toggleClass( "hide", 1 );
+		$( "#table-table-left" ).toggleClass( "hide", 1 );
+    });
+  });
+  $(document).ready(function() {
+    $("#remove-tables").click(function () {
+		$( "#table-table-right" ).toggleClass( "hide", 1 );
+		$( "#table-table-left" ).toggleClass( "hide", 1 );
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function() {
+    $("#export-views").click(function () {
+		$( "#view-table-right" ).toggleClass( "hide", 1 );
+		$( "#view-table-left" ).toggleClass( "hide", 1 );
+    });
+  });
+  $(document).ready(function() {
+    $("#remove-views").click(function () {
+		$( "#view-table-right" ).toggleClass( "hide", 1 );
+		$( "#view-table-left" ).toggleClass( "hide", 1 );
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function() {
+    $("#export-authentications").click(function () {
+		$( "#authentication-table-right" ).toggleClass( "hide", 1 );
+		$( "#authentication-table-left" ).toggleClass( "hide", 1 );
+    });
+  });
+  $(document).ready(function() {
+    $("#remove-authentications").click(function () {
+		$( "#authentication-table-right" ).toggleClass( "hide", 1 );
+		$( "#authentication-table-left" ).toggleClass( "hide", 1 );
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function() {
+    $("#export-introductions").click(function () {
+		$( "#introduction-table-right" ).toggleClass( "hide", 1 );
+		$( "#introduction-table-left" ).toggleClass( "hide", 1 );
+    });
+  });
+  $(document).ready(function() {
+    $("#remove-introductions").click(function () {
+		$( "#introduction-table-right" ).toggleClass( "hide", 1 );
+		$( "#introduction-table-left" ).toggleClass( "hide", 1 );
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function() {
+    $("#export-styles").click(function () {
+		$( "#style-table-right" ).toggleClass( "hide", 1 );
+		$( "#style-table-left" ).toggleClass( "hide", 1 );
+    });
+  });
+  $(document).ready(function() {
+    $("#remove-styles").click(function () {
+		$( "#style-table-right" ).toggleClass( "hide", 1 );
+		$( "#style-table-left" ).toggleClass( "hide", 1 );
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#").click(function () {
+		$( "#save-button" ).switchClass( "btn-dis", "btn-on", 1 );
+    });
+  });
+</script>
+
+
+
+
+<script>
+  $(document).ready(function() {
+    $(".list-row > td:first-child").click(function () {
+		$(this).find('.object-list-open').toggleClass( "object-list-close", 1 );
+    });
+  });
+</script>
+<script>
+  $(document).ready(function() {
+    $(".list-row-hidden > td:first-child").click(function () {
+		$(this).find('.object-list-open').toggleClass( "object-list-close", 1 );
+    });
+  });
+</script>
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$( "#datapage-head-row-left" ).click(function () {
+		if ($('.datapage-rows-left').is(':visible')) {
+			$( ".datapage-rows-left, .datapage-app2-rows-left, .datapage-app3-rows-left" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( ".datapage-rows-left" ).switchClass( "hide", "row-view", 1 );
+		}
+		return false;
+	});
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$( "#datapage-app1-head-row-left" ).click(function () {
+		if ($('.datapage-app1folder-left').is(':visible')) {
+			$( ".datapage-app1folder-left" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( ".datapage-app1folder-left" ).switchClass( "hide", "row-view", 1 );
+		}
+		return false;
+	});
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$( "#datapage-app2-head-row-left" ).click(function () {
+		if ($('.datapage-app3folder-left').is(':visible')) {
+			$( ".datapage-app3folder-left" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( ".datapage-app3folder-left" ).switchClass( "hide", "row-view", 1 );
+		}
+
+		if ($('.datapage-app2folder-left').is(':visible')) {
+			$( ".datapage-app2folder-left" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( ".datapage-app2folder-left" ).switchClass( "hide", "row-view", 1 );
+		}
+		return false;
+	});
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$( "#datapage-app3-head-row-left" ).click(function () {
+		if ($('.datapage-app3folder-left').is(':visible')) {
+			$( ".datapage-app3folder-left" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( ".datapage-app3folder-left" ).switchClass( "hide", "row-view", 1 );
+		}
+		return false;
+	});
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$( "#datapage-app1folder-head-row-left" ).click(function () {
+		if ($('.datapage-app1-rows-left').is(':visible')) {
+			$( ".datapage-app1-rows-left" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( ".datapage-app1-rows-left" ).switchClass( "hide", "row-view", 1 );
+		}
+		return false;
+	});
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$( "#open-datapage-app2folder-list-left, #datapage-app2folder-head-row-left" ).click(function () {
+		if ($('.datapage-app2-rows-left').is(':visible')) {
+			$( ".datapage-app2-rows-left" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( ".datapage-app2-rows-left" ).switchClass( "hide", "row-view", 1 );
+		}
+		return false;
+	});
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$( "#open-datapage-app3folder-list-left, #datapage-app3folder-head-row-left" ).click(function () {
+		if ($('.datapage-app3-rows-left').is(':visible')) {
+			$( ".datapage-app3-rows-left" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( ".datapage-app3-rows-left" ).switchClass( "hide", "row-view", 1 );
+		}
+		return false;
+	});
+});
+</script>
+
+
+<script>
+$(document).ready(function() {
+	$( "#table-head-row-left" ).click(function () {
+		if ($('.table-rows-left').is(':visible')) {
+			$( ".table-rows-left" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( ".table-rows-left" ).switchClass( "hide", "row-view", 1 );
+		}
+			return false;
+		});
+	});
+</script>
+<script>
+$(document).ready(function() {
+	$( "#view-head-row-left" ).click(function () {
+		if ($('.view-rows-left').is(':visible')) {
+			$( ".view-rows-left" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( ".view-rows-left" ).switchClass( "hide", "row-view", 1 );
+		}
+			return false;
+		});
+	});
+</script>
+
+
+
+
+<script>
+$(document).ready(function() {
+	$( "#open-datapage-list-right, #datapage-head-row-right" ).click(function () {
+		if ($('.datapage-rows-right').is(':visible')) {
+			$( "#open-datapage-list-right" ).toggleClass( "object-list-close", 1 );
+			$( ".datapage-rows-right" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( "#open-datapage-list-right" ).toggleClass( "object-list-close", 1 );
+		$( ".datapage-rows-right" ).switchClass( "hide", "row-view", 1 );
+		}
+			return false;
+		});
+	});
+
+$(document).ready(function() {
+	$( "#open-datapage-app1-list-right, #datapage-app1-head-row-right" ).click(function () {
+		if ($('.datapage-app1-rows-right').is(':visible')) {
+			$( "#open-datapage-app1-list-right" ).toggleClass( "object-list-close", 1 );
+			$( ".datapage-app1-rows-right" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( "#open-datapage-app1-list-right" ).toggleClass( "object-list-close", 1 );
+		$( ".datapage-app1-rows-right" ).switchClass( "hide", "row-view", 1 );
+		}
+			return false;
+		});
+	});
+
+$(document).ready(function() {
+	$( "#open-datapage-app2-list-right, #datapage-app2-head-row-right" ).click(function () {
+		if ($('.datapage-app2-rows-right').is(':visible')) {
+			$( "#open-datapage-app2-list-right" ).toggleClass( "object-list-close", 1 );
+			$( ".datapage-app2-rows-right" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( "#open-datapage-app2-list-right" ).toggleClass( "object-list-close", 1 );
+		$( ".datapage-app2-rows-right" ).switchClass( "hide", "row-view", 1 );
+		}
+			return false;
+		});
+	});
+
+</script>
+<script>
+$(document).ready(function() {
+	$( "#open-table-list-right, #table-head-row-right" ).click(function () {
+		if ($('.table-rows-right').is(':visible')) {
+			$( "#open-table-list-right" ).toggleClass( "object-list-close", 1 );
+			$( ".table-rows-right" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( "#open-table-list-right" ).toggleClass( "object-list-close", 1 );
+		$( ".table-rows-right" ).switchClass( "hide", "row-view", 1 );
+		}
+			return false;
+		});
+	});
+</script>
+<script>
+$(document).ready(function() {
+	$( "#open-view-list-right, #view-head-row-right" ).click(function () {
+		if ($('.view-rows-right').is(':visible')) {
+			$( "#open-view-list-right" ).toggleClass( "object-list-close", 1 );
+			$( ".view-rows-right" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( "#open-view-list-right" ).toggleClass( "object-list-close", 1 );
+		$( ".view-rows-right" ).switchClass( "hide", "row-view", 1 );
+		}
+			return false;
+		});
+	});
+</script>
+
+
+
+
+<!-- Rows  -->
+
+<script>
+$(document).ready(function() {
+	$( "#open-datapage-list, #datapage-head-row" ).click(function () {
+		if ($('.datapage-rows').is(':visible')) {
+			$( "#open-datapage-list" ).toggleClass( "object-list-close", 1 );
+			$( ".datapage-rows" ).switchClass( "row-view", "hide", 1 );
+			$( "#datapage-folder-head" ).switchClass( "row-view", "hide", 1 );
+			$( "#datapage-app-head" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( "#open-datapage-list" ).toggleClass( "object-list-close", 1 );
+		$( ".datapage-rows" ).switchClass( "hide", "row-view", 1 );
+		$( "#datapage-folder-head" ).switchClass( "hide", "row-view", 1 );
+		$( "#datapage-app-head" ).switchClass( "hide", "row-view", 1 );
+		}
+			return false;
+		});
+	});
+</script>
+
+<script>
+$(document).ready(function() {
+	$( "#open-table-list, #table-head-row" ).click(function () {
+		if ($('.table-rows').is(':visible')) {
+			$( "#open-table-list" ).toggleClass( "object-list-close", 1 );
+			$( ".table-rows" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( "#open-table-list" ).toggleClass( "object-list-close", 1 );
+		$( ".table-rows" ).switchClass( "hide", "row-view", 1 );
+		}
+			return false;
+		});
+	});
+</script>
+
+<script>
+$(document).ready(function() {
+	$( "#open-view-list, #view-head-row" ).click(function () {
+		if ($('.view-rows').is(':visible')) {
+			$( "#open-view-list" ).toggleClass( "object-list-close", 1 );
+			$( ".view-rows" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( "#open-view-list" ).toggleClass( "object-list-close", 1 );
+		$( ".view-rows" ).switchClass( "hide", "row-view", 1 );
+		}
+			return false;
+		});
+	});
+</script>
+
+<script>
+$(document).ready(function() {
+	$( "#open-authentication-list, #authentication-head-row" ).click(function () {
+		if ($('.authentication-rows').is(':visible')) {
+			$( "#open-authentication-list" ).toggleClass( "object-list-close", 1 );
+			$( ".authentication-rows" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( "#open-authentication-list" ).toggleClass( "object-list-close", 1 );
+		$( ".authentication-rows" ).switchClass( "hide", "row-view", 1 );
+		}
+			return false;
+		});
+	});
+</script>
+
+<script>
+$(document).ready(function() {
+	$( "#open-introduction-list, #introduction-head-row" ).click(function () {
+		if ($('.introduction-rows').is(':visible')) {
+			$( "#open-introduction-list" ).toggleClass( "object-list-close", 1 );
+			$( ".introduction-rows" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( "#open-introduction-list" ).toggleClass( "object-list-close", 1 );
+		$( ".introduction-rows" ).switchClass( "hide", "row-view", 1 );
+		}
+			return false;
+		});
+	});
+</script>
+
+<script>
+$(document).ready(function() {
+	$( "#open-file-list, #file-head-row" ).click(function () {
+		if ($('.file-rows').is(':visible')) {
+			$( "#open-file-list" ).toggleClass( "object-list-close", 1 );
+			$( ".file-rows" ).switchClass( "row-view", "hide", 1 );
+			$( "#file-folder-head" ).switchClass( "row-view", "hide", 1 );
+			$( "#file-app-head" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( "#open-file-list" ).toggleClass( "object-list-close", 1 );
+		$( ".file-rows" ).switchClass( "hide", "row-view", 1 );
+		$( "#file-folder-head" ).switchClass( "hide", "row-view", 1 );
+		$( "#file-app-head" ).switchClass( "hide", "row-view", 1 );
+		}
+			return false;
+		});
+	});
+</script>
+
+<script>
+$(document).ready(function() {
+	$( "#open-style-list, #style-head-row" ).click(function () {
+		if ($('.style-rows').is(':visible')) {
+			$( "#open-style-list" ).toggleClass( "object-list-close", 1 );
+			$( ".style-rows" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( "#open-style-list" ).toggleClass( "object-list-close", 1 );
+		$( ".style-rows" ).switchClass( "hide", "row-view", 1 );
+		}
+			return false;
+		});
+	});
+</script>
+
+<script>
+$(document).ready(function() {
+	$( "#open-localization-list, #localization-head-row" ).click(function () {
+		if ($('.localization-rows').is(':visible')) {
+			$( "#open-localization-list" ).toggleClass( "object-list-close", 1 );
+			$( ".localization-rows" ).switchClass( "row-view", "hide", 1 );
+		}
+		else {
+		$( "#open-localization-list" ).toggleClass( "object-list-close", 1 );
+		$( ".localization-rows" ).switchClass( "hide", "row-view", 1 );
+		}
+			return false;
+		});
+	});
+</script>
+
+
+
+
+
+
+
+
+
+
+<!-- Help -->
+<script>
+  $(document).ready(function() {
+    $("#open-help").click(function () {
+      	$(" #quick-help" ).toggle("blind", {}, 200);
+      	$(" #help-arrow" ).toggle("blind", {}, 1);
+		$( "#open-help" ).toggleClass( "quickhelp-close", 1 );
+    });
+  });
+</script>
+
+
+
+<!-- Sidebar Collapse -->
+<script>
+	$(function() {
+		$( "#collapse-close" ).click(function(){
+			$( "#rightbox" ).switchClass( "rightbox", "rightbox-min", 120 );
+			$( "#collapse-close" ).switchClass( "view", "hide", 1 );
+			$( "#collapse-open" ).switchClass( "hide", "view", 1 );
+			$( "#app-title" ).toggle("blind", {}, 1);
+			return false;
+		});
+	});
+
+	$(function() {
+		$( "#collapse-open" ).click(function(){
+			$( "#rightbox" ).switchClass( "rightbox-min", "rightbox", 120 );
+			$( "#collapse-close" ).switchClass( "hide", "view", 1 );
+			$( "#collapse-open" ).switchClass( "view", "hide", 1 );
+			$( "#app-title" ).toggle("blind", {}, 1);
+			return false;
+		});
+	});
+
+</script>
+
+<script>
+  $(document).ready(function() {
+    $("#open-help-01").click(function () {
+      $("#quick-help").toggle("blind", {}, 200);
+	  $("#help-arrow").toggle("blind", {}, 1);
+    });
+  });
+</script>
+
+<!-- TABS -->
+<script>
+	$(function() {
+		$( "#datapages" ).click(function(){
+			$( "#datapages" ).switchClass( "off", "on", 1 );
+			$( ".on" ).switchClass( "on", "off", 1 );
+			return false;
+		})
+	});
+	$(function() {
+		$( "#tables" ).click(function(){
+			$( "#tables" ).switchClass( "off", "on", 1 );
+			$( ".on" ).switchClass( "on", "off", 1 );
+			return false;
+		});
+	});
+	$(function() {
+		$( "#views" ).click(function(){
+			$( "#views" ).switchClass( "off", "on", 1 );
+			$( ".on" ).switchClass( "on", "off", 1 );
+			return false;
+		});
+	});
+	$(function() {
+		$( "#authentications" ).click(function(){
+			$( "#authentications" ).switchClass( "off", "on", 1 );
+			$( ".on" ).switchClass( "on", "off", 1 );
+			return false;
+		});
+	});
+	$(function() {
+		$( "#introductions" ).click(function(){
+			$( "#introductions" ).switchClass( "off", "on", 1 );
+			$( ".on" ).switchClass( "on", "off", 1 );
+			return false;
+		});
+	});
+	$(function() {
+		$( "#files" ).click(function(){
+			$( "#files" ).switchClass( "off", "on", 1 );
+			$( ".on" ).switchClass( "on", "off", 1 );
+			return false;
+		});
+	});
+	$(function() {
+		$( "#styles" ).click(function(){
+			$( "#styles" ).switchClass( "off", "on", 1 );
+			$( ".on" ).switchClass( "on", "off", 1 );
+			return false;
+		});
+	});
+	$(function() {
+		$( "#localizations" ).click(function(){
+			$( "#localizations" ).switchClass( "off", "on", 1 );
+			$( ".on" ).switchClass( "on", "off", 1 );
+			return false;
+		});
+	});
+</script>
+
+
+<!-- Row Toggles -->
+
+<script>
+  $(document).ready(function() {
+    $("#1down").click(function () {
+      $("#1body").toggle("blind", {}, 120);
+    });
+
+    $("#1up").click(function () {
+      $("#1body").toggle("blind", {}, 120);
+    });
+
+
+    $("#2down").click(function () {
+      $("#2body").toggle("blind", {}, 120);
+    });
+
+    $("#2up").click(function () {
+      $("#2body").toggle("blind", {}, 120);
+    });
+
+
+    $("#3down").click(function () {
+      $("#3body").toggle("blind", {}, 120);
+    });
+
+    $("#3up").click(function () {
+      $("#3body").toggle("blind", {}, 120);
+    });
+
+    $("#4down").click(function () {
+      $("#4body").toggle("blind", {}, 120);
+    });
+
+    $("#4up").click(function () {
+      $("#4body").toggle("blind", {}, 120);
+    });
+
+  });
+</script>
+
+
+
+
+<!--
+
+<script>
+  $(document).ready(function() {
+    $("#export-datapages").click(function () {
+		$( "#datapage-table-right" ).toggleClass( "hide", 1 );
+		$( "#export-datapages" ).toggleClass( "opacity-03", 1 );
+		$( ".datapage-rows-left a" ).toggleClass( "opacity-03", 1 );
+		$( ".datapage-app1-rows-left a" ).toggleClass( "opacity-03", 1 );
+    });
+  });
+</script>
+
+-->
+
+
+</body>
+</html>

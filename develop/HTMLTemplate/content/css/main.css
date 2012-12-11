@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*------ bread crumbs ------*/
+#main #crumbs #nav ul li:not(:first-child):before
+{
+    content: '>';
+	color:#CCC;
+}
+
+#main #crumbs #nav ul
+{
+	list-style-type: none;
+}
+
+#main #crumbs #nav ul li
+{
+	float:left
+}
+
+#main #crumbs #help
+{
+	float:right;
+}
+
+#main #crumbs #help a img
+{
+	float:right;
+	border:none;
+}
+
+#main #crumbs #nav{
+	float:left;
+	width:100%;
+}
+
+/*------ packages ------*/
+#main #page #packages #currentPlan{
+float:left;
+}
+
+#main #page #packages #allPlan{
+	float:left;
+}
+
+#main #page #packages .plan{
+	float:left;
+}
+
+#main #page #packages .arrow{
+	float:left;
+	color:#CCC;
+	padding:40px 10px 40px 10px;
+	height:100px;
+	cursor:pointer;
+}
