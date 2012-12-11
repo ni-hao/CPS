@@ -1,2 +1,0 @@
-D:\work\workspace\cps\develop\CPS\CPS.MockObjects\bin\Debug\CPS.MockObjects.dll
-D:\work\workspace\cps\develop\CPS\CPS.MockObjects\bin\Debug\Moq.dll
